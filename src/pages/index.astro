@@ -1,6 +1,6 @@
 ---
 import Navbar from "../components/Navbar.astro";
-import Footer from "../components/Footer.astro";
+import Footer from "../components/Footer.jsx";
 import Automations from "../components/Automations.jsx";
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
@@ -15,5 +15,5 @@ import Pricing from "../components/Pricing.jsx";
 <HowItWorks client:load/>
 <Benefits client:load/>
 <Pricing client:load/>
-<Footer />
+<Footer client:load/>
 </Layout>
