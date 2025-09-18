@@ -1,41 +1,11 @@
 ---
 import Navbar from "../components/Navbar.astro";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer.jsx";
 import Layout from "../layouts/Layout.astro";
+import PricingSection from "../components/PricingSection.jsx";
 ---
 <Layout>
 <Navbar />
-<section class="py-20 text-center">
-  <h2 class="text-4xl font-bold mb-10">Planes y Precios</h2>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-    <div class="p-8 bg-white rounded-2xl shadow">
-      <h3 class="text-2xl font-semibold">Básico</h3>
-      <p class="text-gray-600 my-4">$9/mes</p>
-      <ul class="text-gray-700">
-        <li>✔ 2 automatizaciones</li>
-        <li>✔ Soporte básico</li>
-      </ul>
-      <a href="/register" class="mt-6 inline-block px-6 py-2 bg-blue-600 text-white rounded-lg">Comenzar</a>
-    </div>
-    <div class="p-8 bg-white rounded-2xl shadow border-2 border-blue-600">
-      <h3 class="text-2xl font-semibold">Pro</h3>
-      <p class="text-gray-600 my-4">$29/mes</p>
-      <ul class="text-gray-700">
-        <li>✔ 5 automatizaciones</li>
-        <li>✔ Soporte prioritario</li>
-      </ul>
-      <a href="/register" class="mt-6 inline-block px-6 py-2 bg-blue-600 text-white rounded-lg">Comenzar</a>
-    </div>
-    <div class="p-8 bg-white rounded-2xl shadow">
-      <h3 class="text-2xl font-semibold">Enterprise</h3>
-      <p class="text-gray-600 my-4">$99/mes</p>
-      <ul class="text-gray-700">
-        <li>✔ Automatizaciones ilimitadas</li>
-        <li>✔ Soporte dedicado</li>
-      </ul>
-      <a href="/register" class="mt-6 inline-block px-6 py-2 bg-blue-600 text-white rounded-lg">Comenzar</a>
-    </div>
-  </div>
-</section>
-<Footer />
+<PricingSection client:load/>
+<Footer client:load/>
 </Layout>
