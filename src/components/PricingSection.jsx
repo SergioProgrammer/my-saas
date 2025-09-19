@@ -106,7 +106,7 @@ export default function Pricing() {
                 </ul>
               </div>
               <div className="mt-8">
-                <a href="/register" className="block w-full px-6 py-3 text-center bg-gray-900 text-white rounded-xl font-medium hover:bg-gray-800 transition">
+                <a href="/registro" className="block w-full px-6 py-3 text-center bg-gray-900 text-white rounded-xl font-medium hover:bg-gray-800 transition">
                   {plan.cta}
                 </a>
               </div>
@@ -145,7 +145,7 @@ export default function Pricing() {
                   </ul>
                 </div>
                 <div className="mt-6">
-                  <a href="/register" className="block w-full px-5 py-3 text-center bg-gray-900 text-white rounded-xl font-medium hover:bg-gray-800 transition">
+                  <a href="/registro" className="block w-full px-5 py-3 text-center bg-gray-900 text-white rounded-xl font-medium hover:bg-gray-800 transition">
                     {plan.cta}
                   </a>
                 </div>
