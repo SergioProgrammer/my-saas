@@ -1,26 +1,41 @@
----                            
-import '../styles/global.css' 
---- 
-
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="es">
+  <head>
+    <!-- Básico -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Automatiza Rápido con ProcesIA | Automatizaciones con IA</title>
+    <meta name="description" content="ProcesIA te ayuda a automatizar correos y tareas con inteligencia artificial de manera rápida y sencilla." />
+
+    <!-- SEO -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="ProcesIA" />
+    <meta name="keywords" content="automatización, inteligencia artificial, correos automáticos, IA para empresas, ProcesIA" />
+
+    <!-- Open Graph / Redes sociales -->
+    <meta property="og:title" content="Automatiza rápido con ProcesIA" />
+    <meta property="og:description" content="Conecta tu Gmail y deja que la IA responda tus correos de manera automática y profesional." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://procesia.pro" />
+    <meta property="og:image" content="/og-image.png" />
+	<meta property="og:site_name" content="ProcesIA" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Estilos globales -->
+    <link rel="stylesheet" href="/styles/global.css" />
+  </head>
+
+  <body>
+    <slot />
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>
