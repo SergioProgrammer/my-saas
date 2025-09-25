@@ -19,7 +19,7 @@ export default function Benefits() {
           Beneficios principales
         </h2>
         <p className="mt-4 text-base sm:text-lg text-gray-700/80 max-w-2xl mx-auto">
-          Todo lo que necesitas para automatizar tus flujos de trabajo con confianza.
+          Todo lo que necesitas para automatizar tus flujos de trabajo con confianza
         </p>
       </div>
 
