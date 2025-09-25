@@ -4,7 +4,7 @@ import { FaEnvelope, FaCalendarAlt, FaWhatsapp, FaCrown, FaBuilding, FaRobot } f
 
 const plans = [
   { 
-    title: "Demo 1 mes", 
+    title: "Demo 7 días GRATIS", 
     price: "Gratis", 
     description: "Prueba ProcesIA sin coste y descubre cómo automatizar en pocos clics.", 
     features: [
@@ -16,65 +16,18 @@ const plans = [
     cta: "Empieza gratis" 
   },
   { 
-    title: "Plan 1 automatización", 
-    price: "22,99 €/mes IVA incl.", 
+    title: "Añade más de 2 automatizaciones", 
+    price: "Recibe un 10% de descuento", 
     description: "Activa una automatización y conecta Gmail, WhatsApp o Calendar sin complicaciones.", 
     features: [
-      "✔ 1 automatización activa", 
+      "✔ Más de 2 automatizaciones activas", 
       "✔ Cambia tu automatización en cualquier momento", 
       "✔ Soporte incluido"
     ], 
     icon: <FaEnvelope className="w-8 h-8 text-red-500" />, 
     cta: "Elegir plan" 
   },
-  { 
-    title: "Plan 2 automatizaciones", 
-    price: "39,99 €/mes IVA incl.", 
-    description: "Escoge y activa 2 automatizaciones que trabajen en paralelo.", 
-    features: [
-      "✔ 2 automatizaciones activas", 
-      "✔ Ejemplos: Gmail + WhatsApp o Calendar + ChatBot", 
-      "⚡ Soporte prioritario"
-    ], 
-    icon: <FaCalendarAlt className="w-8 h-8 text-blue-500" />, 
-    cta: "Elegir plan" 
-  },
-  { 
-    title: "Plan 3 automatizaciones", 
-    price: "59,99 €/mes IVA incl.", 
-    description: "Ideal para negocios que necesitan cubrir varios canales.", 
-    features: [
-      "✔ 3 automatizaciones activas", 
-      "✔ Máximo ahorro por automatización", 
-      "✔ Soporte premium"
-    ], 
-    icon: <FaWhatsapp className="w-8 h-8 text-green-500" />, 
-    cta: "Elegir plan" 
-  },
-  { 
-    title: "Plan más de 3 automatizaciones", 
-    price: "89,99 €/mes IVA incl.", 
-    description: "Activa una automatización y conecta Gmail, WhatsApp o Calendar sin complicaciones.", 
-    features: [
-      "✔ 4 o más automatizaciones activas", 
-      "✔ Solo 14,99€ por automatización adicional",
-      "✔ Soporte premium"
-    ], 
-    icon: <FaCrown className="w-8 h-8 text-yellow-500" />,
-    cta: "Elegir plan" 
-  },
-  { 
-    title: "Personalizada", 
-    price: "Desde 699€ + mensualidad", 
-    description: "Automatizaciones avanzadas diseñadas a medida para tu negocio.", 
-    features: [
-      "✔ Análisis de tus procesos", 
-      "✔ Automatizaciones personalizadas", 
-      "✔ Soporte y formación dedicada"
-    ], 
-    icon: <FaBuilding className="w-8 h-8 text-gray-700" />, 
-    cta: "Pedir presupuesto" 
-  },
+  
 ];
 
 export default function Pricing() {
