@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   SiGmail,
@@ -31,7 +32,7 @@ const integrations = [
   { name: "HubSpot", icon: <SiHubspot className="w-10 h-10 text-orange-600" /> },
   { name: "Shopify", icon: <SiShopify className="w-10 h-10 text-green-600" /> },
   { name: "Stripe", icon: <SiStripe className="w-10 h-10 text-indigo-500" /> },
-  // Placeholders (no están en react-icons todavía)
+  // Placeholders
   { name: "ElevenLabs", icon: <div className="text-lg font-semibold">11Labs</div> },
   { name: "Lovable", icon: <div className="text-lg font-semibold">Lovable</div> },
   { name: "Make.com", icon: <div className="text-lg font-semibold">Make</div> },
@@ -39,18 +40,34 @@ const integrations = [
 ];
 
 export default function IntegrationsMarquee() {
+  const [duration, setDuration] = useState(25); // default desktop
+
+  useEffect(() => {
+    const updateSpeed = () => {
+      if (window.innerWidth < 768) {
+        // Mobile
+        setDuration(6); // el doble de rápido
+      } else {
+        // Desktop
+        setDuration(25);
+      }
+    };
+
+    updateSpeed();
+    window.addEventListener("resize", updateSpeed);
+    return () => window.removeEventListener("resize", updateSpeed);
+  }, []);
+
   return (
     <section className="bg-white py-16">
       <div className="max-w-9xl mx-auto px-6 text-center">
-        {/* Marquee */}
         <div className="relative mt-10 overflow-hidden">
           <motion.div
             className="flex gap-16 whitespace-nowrap"
             initial={{ x: 0 }}
             animate={{ x: ["0%", "-50%"] }}
-            transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+            transition={{ repeat: Infinity, duration, ease: "linear" }}
           >
-            {/* Duplicamos la lista para efecto infinito */}
             {[...integrations, ...integrations].map((integration, i) => (
               <div
                 key={i}

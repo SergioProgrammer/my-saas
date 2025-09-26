@@ -134,53 +134,55 @@ export default function Tienda() {
           ))}
         </div>
 
-        {/* Carrusel en mobile */}
-        <div className="md:hidden mt-10">
-          <div
-            ref={trackRef}
-            className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth px-1 -mx-1"
-          >
-            {automations.map((a, i) => (
-              <div
-                key={a.id}
-                className="snap-center shrink-0 min-w-[85%] bg-white rounded-2xl shadow p-6 text-left"
-              >
-                <div className="flex items-start gap-4">
-                  <div
-                    className={`shrink-0 w-12 h-12 rounded-xl ${a.accentBg} flex items-center justify-center`}
-                  >
-                    <a.icon className={`h-6 w-6 ${a.accentIcon}`} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 text-lg">{a.name}</h3>
-                    <p className="text-gray-600 text-sm mt-1">{a.description}</p>
-                  </div>
+       {/* Carrusel en mobile */}
+      <div className="md:hidden mt-10">
+        <div
+          ref={trackRef}
+          className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth px-4"
+        >
+          {automations.map((a, i) => (
+            <div
+              key={a.id}
+              className="snap-center shrink-0 min-w-[90%] bg-white rounded-2xl shadow p-6 text-left"
+            >
+              <div className="flex items-start gap-4">
+                <div
+                  className={`shrink-0 w-12 h-12 rounded-xl ${a.accentBg} flex items-center justify-center`}
+                >
+                  <a.icon className={`h-6 w-6 ${a.accentIcon}`} />
                 </div>
-                <div className="mt-6 flex items-center justify-between">
-                  <span className="font-semibold text-gray-900">{a.price}</span>
-                  <a
-                    href="#"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-black text-white px-4 py-2 text-sm font-medium shadow hover:opacity-90 transition"
-                  >
-                    <Zap className="h-4 w-4" /> Instalar
-                  </a>
+                <div>
+                  <h3 className="font-semibold text-gray-900 text-lg">{a.name}</h3>
+                  <p className="text-gray-600 text-sm mt-1">{a.description}</p>
                 </div>
               </div>
-            ))}
-          </div>
-          <div className="mt-4 flex items-center justify-center gap-2">
-            {automations.map((_, i) => (
-              <button
-                key={i}
-                className={`rounded-full ${activeIndex === i ? 'w-3 h-3 bg-black' : 'w-2.5 h-2.5 bg-gray-300'}`}
-                onClick={() => {
-                  const scroller = trackRef.current
-                  if (scroller) scroller.scrollTo({ left: i * 300, behavior: 'smooth' })
-                }}
-              />
-            ))}
-          </div>
+              <div className="mt-6 flex items-center justify-between">
+                <span className="font-semibold text-gray-900">{a.price}</span>
+                <a
+                  href="#"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-black text-white px-4 py-2 text-sm font-medium shadow hover:opacity-90 transition"
+                >
+                  <Zap className="h-4 w-4" /> Instalar
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
+        <div className="mt-4 flex items-center justify-center gap-2">
+          {automations.map((_, i) => (
+            <button
+              key={i}
+              className={`rounded-full ${
+                activeIndex === i ? 'w-3 h-3 bg-black' : 'w-2.5 h-2.5 bg-gray-300'
+              }`}
+              onClick={() => {
+                const scroller = trackRef.current
+                if (scroller) scroller.scrollTo({ left: i * 320, behavior: 'smooth' })
+              }}
+            />
+          ))}
+        </div>
+      </div>
 
         {/* Botón Ver más */}
         <div className="mt-10">
