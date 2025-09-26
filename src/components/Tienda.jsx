@@ -123,7 +123,7 @@ export default function Tienda() {
           <div className="mt-6 flex items-center justify-between">
             <span className="font-semibold text-gray-900">{a.price}</span>
             <a
-              href="#"
+              href="https://app-procesia.vercel.app/registro"
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-black text-white px-4 py-2 text-sm font-medium shadow hover:opacity-90 transition"
             >
               <Zap className="h-4 w-4" /> Instalar

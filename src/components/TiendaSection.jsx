@@ -395,11 +395,12 @@ export default function TiendaSection() {
 
                 <div className="mt-5 flex items-center justify-between">
                   <a
-                    href={t.href}
+                    href="https://app-procesia.vercel.app/registro"
                     className="inline-flex items-center justify-center gap-2 rounded-xl bg-black text-white px-4 py-2.5 text-sm font-medium shadow hover:opacity-90 transition"
                   >
                     <Zap className="h-4 w-4" /> Registrate para empezar
                   </a>
+
                   <a
                     href={t.href}
                     className="text-sm text-gray-700 underline-offset-4 hover:underline"
