@@ -30,7 +30,7 @@ export default function HowItWorks() {
           Cómo funciona
         </h2>
         <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-          Empieza en minutos: conecta tus apps y activa automatizaciones con un solo clic.
+          Conecta tus apps y activa automatizaciones con un solo clic.
         </p>
 
         <div className="mt-20 relative">
