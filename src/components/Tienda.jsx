@@ -92,49 +92,49 @@ export default function Tienda() {
   }, [])
 
   return (
-    <section className="bg-[#faf9f6] py-20 md:hidden overflow-hidden">
-    <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 break-words">
-        Tienda de automatizaciones
-      </h2>
-    
-        {/* Grid en desktop */}
-        <div className="hidden md:grid mt-24 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {automations.map((a, i) => (
-            <motion.div
-              key={a.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-3xl shadow p-6 flex flex-col justify-between hover:shadow-lg transition"
-            >
-              <div className="flex items-start gap-4">
-                <div
-                  className={`shrink-0 w-16 h-12 rounded-xl ${a.accentBg} flex items-center justify-center`}
-                >
-                  <a.icon className={`h-6 w-6 ${a.accentIcon}`} />
-                </div>
-                <div className="text-left">
-                  <h3 className="font-semibold text-gray-900 text-lg">{a.name}</h3>
-                  <p className="text-gray-600 text-sm mt-1">{a.description}</p>
-                </div>
-              </div>
-              <div className="mt-6 flex items-center justify-between">
-                <span className="font-semibold text-gray-900">{a.price}</span>
-                <a
-                  href="#"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-black text-white px-4 py-2 text-sm font-medium shadow hover:opacity-90 transition"
-                >
-                  <Zap className="h-4 w-4" /> Instalar
-                </a>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+    <section className="bg-[#faf9f6] py-20 overflow-hidden">
+  <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 break-words">
+      Tienda de automatizaciones
+    </h2>
 
-     {/* Carrusel en mobile */}
-    <div className="md:hidden mt-10 overflow-hidden">  
+    {/* Grid en desktop */}
+    <div className="hidden md:grid mt-24 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {automations.map((a, i) => (
+        <motion.div
+          key={a.id}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: i * 0.1 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-3xl shadow p-6 flex flex-col justify-between hover:shadow-lg transition"
+        >
+          <div className="flex items-start gap-4">
+            <div
+              className={`shrink-0 w-16 h-12 rounded-xl ${a.accentBg} flex items-center justify-center`}
+            >
+              <a.icon className={`h-6 w-6 ${a.accentIcon}`} />
+            </div>
+            <div className="text-left">
+              <h3 className="font-semibold text-gray-900 text-lg">{a.name}</h3>
+              <p className="text-gray-600 text-sm mt-1">{a.description}</p>
+            </div>
+          </div>
+          <div className="mt-6 flex items-center justify-between">
+            <span className="font-semibold text-gray-900">{a.price}</span>
+            <a
+              href="#"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-black text-white px-4 py-2 text-sm font-medium shadow hover:opacity-90 transition"
+            >
+              <Zap className="h-4 w-4" /> Instalar
+            </a>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+
+    {/* Carrusel en mobile */}
+    <div className="md:hidden mt-10 overflow-hidden">
       <div
         ref={trackRef}
         className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth px-4"
@@ -183,17 +183,17 @@ export default function Tienda() {
       </div>
     </div>
 
+    {/* Botón Ver más */}
+    <div className="mt-10">
+      <a
+        href="/tienda"
+        className="inline-block bg-black text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition"
+      >
+        Ver más automatizaciones →
+      </a>
+    </div>
+  </div>
+</section>
 
-        {/* Botón Ver más */}
-        <div className="mt-10">
-          <a
-            href="/tienda"
-            className="inline-block bg-black text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition"
-          >
-            Ver más automatizaciones →
-          </a>
-        </div>
-      </div>
-    </section>
   )
 }
