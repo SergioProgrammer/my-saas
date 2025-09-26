@@ -16,6 +16,7 @@ import {
   SiHubspot,
   SiShopify,
   SiStripe,
+  SiAirtable,
 } from "react-icons/si";
 
 const integrations = [
@@ -33,10 +34,16 @@ const integrations = [
   { name: "Shopify", icon: <SiShopify className="w-10 h-10 text-green-600" /> },
   { name: "Stripe", icon: <SiStripe className="w-10 h-10 text-indigo-500" /> },
   // Placeholders
-  { name: "ElevenLabs", icon: <div className="text-lg font-semibold">11Labs</div> },
-  { name: "Lovable", icon: <div className="text-lg font-semibold">Lovable</div> },
+  { 
+  name: "ElevenLabs", 
+  icon: <img src="/logos/eleven.svg" alt="ElevenLabs" className="h-10 w-auto" /> 
+},
+  { 
+  name: "Lovable", 
+  icon: <img src="/logos/lovable.svg" alt="lovable" className="h-10 w-auto" /> 
+},
   { name: "Make.com", icon: <div className="text-lg font-semibold">Make</div> },
-  { name: "Airtable", icon: <div className="text-lg font-semibold">Airtable</div> },
+  { name: "Airtable", icon: <SiAirtable className="w-10 h-10 text-indigo-500" /> },
 ];
 
 export default function IntegrationsMarquee() {
