@@ -94,15 +94,13 @@ export default function Tienda() {
   return (
     <section className="bg-[#faf9f6] py-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-           Nuestra tienda de automatizaciones
+        <h2 className="text-6xl sm:text-6xl font-bold text-gray-900">
+           Tienda de automatizaciones
         </h2>
-        <p className="mt-3 text-lg text-gray-600">
-          Elige entre las plantillas más útiles y conecta tu negocio 
-        </p>
+        
 
         {/* Grid en desktop */}
-        <div className="hidden md:grid mt-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="hidden md:grid mt-24 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {automations.map((a, i) => (
             <motion.div
               key={a.id}
@@ -110,11 +108,11 @@ export default function Tienda() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl shadow p-6 flex flex-col justify-between hover:shadow-lg transition"
+              className="bg-white rounded-3xl shadow p-6 flex flex-col justify-between hover:shadow-lg transition"
             >
               <div className="flex items-start gap-4">
                 <div
-                  className={`shrink-0 w-12 h-12 rounded-xl ${a.accentBg} flex items-center justify-center`}
+                  className={`shrink-0 w-16 h-12 rounded-xl ${a.accentBg} flex items-center justify-center`}
                 >
                   <a.icon className={`h-6 w-6 ${a.accentIcon}`} />
                 </div>

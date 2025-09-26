@@ -36,7 +36,7 @@ export default function Benefits() {
                 viewport={{ once: true }}
                 className="aspect-square flex flex-col items-center justify-center text-center select-none"
               >
-                <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-white/20 backdrop-blur-[1px] mb-4">
+                <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-white/0  mb-4">
                   {b.icon}
                 </div>
                 <h3 className="text-lg md:text-xl font-semibold text-gray-900">{b.title}</h3>

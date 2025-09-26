@@ -24,7 +24,7 @@ const plans = [
   },
   {
     title: "Añade más de 2 automatizaciones",
-    price: "-10% descuento",
+    price: "5% descuento",
     description:
       "Activa automatizaciones ilimitadas y conecta Gmail, WhatsApp o Calendar sin complicaciones.",
     features: [
@@ -33,7 +33,20 @@ const plans = [
       "✔ Soporte incluido",
     ],
     icon: <FaCrown className="w-8 h-8 text-yellow-500" />,
-    cta: "Elegir plan",
+    cta: "Ir a la tienda",
+  },
+  {
+    title: "Añade más de 5 automatizaciones",
+    price: "10% descuento",
+    description:
+      "Activa automatizaciones ilimitadas y conecta Gmail, WhatsApp o Calendar sin complicaciones.",
+    features: [
+      "✔ Más de 5 automatizaciones activas",
+      "✔ Cambia tu automatización en cualquier momento",
+      "✔ Soporte incluido",
+    ],
+    icon: <FaCrown className="w-8 h-8 text-yellow-500" />,
+    cta: "Ir a la tienda",
   },
 ];
 
@@ -103,7 +116,7 @@ export default function Pricing() {
     <section className="bg-gradient-to-b from-gray-50 to-white py-24 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
         <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900">
-          Planes y precios
+          Planes 
         </h2>
         <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
           ProcesIA funciona con{" "}
@@ -114,7 +127,7 @@ export default function Pricing() {
         </p>
 
         {/* Grid Desktop */}
-        <div className="hidden md:grid mt-20 grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="hidden md:grid mt-20 grid-cols-1 md:grid-cols-3 gap-10">
           {plans.map((plan, index) => (
             <motion.div
               key={`grid-${index}`}
@@ -156,7 +169,7 @@ export default function Pricing() {
               </div>
               <div className="mt-8">
                 <a
-                  href="/registro"
+                  href="/tienda"
                   className={`block w-full px-6 py-3 text-center rounded-xl font-medium transition ${
                     plan.highlight
                       ? "bg-indigo-600 text-white hover:bg-indigo-500"
