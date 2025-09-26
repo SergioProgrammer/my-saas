@@ -92,13 +92,12 @@ export default function Tienda() {
   }, [])
 
   return (
-    <section className="bg-[#faf9f6] py-20">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-        <h2 className="text-6xl sm:text-6xl font-bold text-gray-900">
-           Tienda de automatizaciones
-        </h2>
-        
-
+    <section className="bg-[#faf9f6] py-20 md:hidden overflow-hidden">
+    <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 break-words">
+        Tienda de automatizaciones
+      </h2>
+    
         {/* Grid en desktop */}
         <div className="hidden md:grid mt-24 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {automations.map((a, i) => (
