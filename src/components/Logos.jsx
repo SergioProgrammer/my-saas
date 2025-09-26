@@ -46,7 +46,7 @@ export default function IntegrationsMarquee() {
     const updateSpeed = () => {
       if (window.innerWidth < 768) {
         // Mobile
-        setDuration(6); // el doble de rápido
+        setDuration(6); 
       } else {
         // Desktop
         setDuration(25);
