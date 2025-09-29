@@ -1,0 +1,144 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.jsx";
+import AutomationDetailLayout from "../../components/AutomationDetailLayout.astro";
+
+const detail = {
+  hero: {
+    badge: "Agronegocios",
+    title: "Pedidos automatizados a proveedores",
+    description:
+      "Genera solicitudes de compra en cuanto el stock baja de mínimos, con trazabilidad completa y confirmaciones por canal.",
+    highlights: [
+      "Integrado con inventario y tratamientos",
+      "Catálogo de proveedores actualizado",
+      "Aprobaciones multi-nivel",
+      "Confirmaciones automáticas por email o WhatsApp",
+    ],
+    panelCopy:
+      "Aprueba pedidos sugeridos, revisa condiciones y envía órdenes de compra firmadas sin salir del dashboard.",
+    metrics: [
+      { label: "Pedidos automatizados", value: "85%", caption: "Del total mensual" },
+      { label: "Tiempo de aprobación", value: "-60%", caption: "Reducción promedio" },
+    ],
+  },
+  sections: [
+    {
+      title: "Qué automatiza",
+      subtitle: "Transforma el proceso de aprovisionamiento en un flujo sin manualidades.",
+      items: [
+        {
+          title: "Detección de necesidad",
+          description:
+            "Lectura de stock y plan de tratamientos para generar sugerencias con cantidad y fecha óptimas.",
+          tags: ["Stock", "Campañas"],
+        },
+        {
+          title: "Circuito de aprobación",
+          description:
+            "Define responsables y umbrales económicos. Reciben notificación y aprueban desde móvil o desktop.",
+          tags: ["Workflows", "Alertas"],
+        },
+        {
+          title: "Comunicación al proveedor",
+          description:
+            "Envía orden en PDF o integra directamente por EDI, email o WhatsApp corporativo.",
+          tags: ["PDF firmado", "EDI"],
+        },
+      ],
+    },
+    {
+      title: "Flujo completo",
+      subtitle: "Del mínimo detectado a la entrega sin errores.",
+      layout: "timeline",
+      items: [
+        { step: "01", title: "Sugerencia", description: "El sistema calcula la reposición según stock, campañas y lead time." },
+        { step: "02", title: "Revisión", description: "El responsable ajusta o aprueba la cantidad y condiciones." },
+        { step: "03", title: "Envío", description: "Se envía la orden al proveedor y se registran confirmaciones." },
+        { step: "04", title: "Recepción", description: "Conciliamos albarán vs. pedido automáticamente." },
+      ],
+    },
+    {
+      title: "Alertas y controles",
+      subtitle: "Mantén el flujo bajo control en todo momento.",
+      items: [
+        {
+          title: "Proveedor retrasado",
+          description: "Si no hay confirmación o la fecha prometida cambia, se avisa al responsable de compras.",
+          tags: ["Alertas en tiempo real"],
+        },
+        {
+          title: "Condiciones especiales",
+          description: "Gestiona precios por temporada, descuentos volumétricos y contratos marco.",
+          tags: ["Contratos", "Precios"],
+        },
+        {
+          title: "Trazabilidad",
+          description: "Cada pedido enlaza automáticamente con lote, parcela y tratamiento asociado.",
+          tags: ["Registro sanitario"],
+        },
+      ],
+      callout: "Incluye plantillas de pedidos y correo de confirmación para agilizar la adopción con proveedores.",
+    },
+  ],
+  pricing: {
+    tiers: [
+      {
+        name: "Finca compacta",
+        description: "Hasta 5 proveedores activos por campaña.",
+        price: "89,99 €",
+        users: "3 usuarios compras",
+        includes: [
+          "Pedidos sugeridos",
+          "Aprobación básica",
+          "Confirmación por email",
+        ],
+      },
+      {
+        name: "Finca diversificada",
+        description: "Gestiona distintos proveedores y contratos por cultivo.",
+        price: "174,99 €",
+        users: "10 usuarios",
+        includes: [
+          "Multi-nivel de aprobación",
+          "Plantillas personalizadas",
+          "Confirmación por WhatsApp",
+        ],
+        highlight: true,
+      },
+      {
+        name: "Cooperativa",
+        description: "Centraliza pedidos de varias explotaciones y consolida compras.",
+        price: "249,99 €",
+        users: "Usuarios ilimitados",
+        includes: [
+          "Integración EDI",
+          "Conciliación con ERP",
+          "Reporting de ahorro",
+        ],
+      },
+    ],
+    offline: {
+      description:
+        "Puedes preparar pedidos incluso sin conexión. El envío se realiza automáticamente en cuanto vuelve la cobertura.",
+      extraLabel: "Cola de envío offline",
+      price: "+70,99 € / mes",
+    },
+    customCopy: "¿Necesitas contratos plurianuales o firma avanzada? Añadimos workflows a medida.",
+  },
+  cta: {
+    primaryLabel: "Automatizar pedidos",
+    secondaryLabel: "Solicitar consultoría",
+    secondaryHref: "https://cal.com/procesia/agro",
+    finalTitle: "Repón insumos justo a tiempo",
+    finalSubtitle:
+      "Libera al equipo de compras de tareas manuales y alinea inventario, proveedores y tratamientos en un único flujo.",
+  },
+};
+---
+<Layout>
+  <Navbar />
+  <AutomationDetailLayout detail={detail} />
+  <Footer client:load />
+</Layout>

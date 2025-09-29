@@ -1,0 +1,310 @@
+---
+
+interface DetailCTA {
+  primaryLabel?: string;
+  primaryHref?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+  finalTitle?: string;
+  finalSubtitle?: string;
+}
+
+interface DetailMetric {
+  label: string;
+  value: string;
+  caption?: string;
+}
+
+interface DetailHero {
+  badge?: string;
+  title: string;
+  description: string;
+  highlights?: string[];
+  panelCopy?: string;
+  metrics?: DetailMetric[];
+}
+
+interface DetailSectionItem {
+  title: string;
+  description: string;
+  tags?: string[];
+  step?: string;
+}
+
+type SectionLayout = 'timeline' | 'grid';
+
+interface DetailSection {
+  title: string;
+  subtitle?: string;
+  layout?: SectionLayout;
+  items?: DetailSectionItem[];
+  callout?: string;
+}
+
+interface DetailPricingTier {
+  name: string;
+  description: string;
+  price: string;
+  users?: string;
+  includes: string[];
+  highlight?: boolean;
+}
+
+interface DetailPricingOffline {
+  description: string;
+  extraLabel: string;
+  price: string;
+}
+
+interface DetailPricing {
+  tiers?: DetailPricingTier[];
+  offline?: DetailPricingOffline;
+  customCopy?: string;
+}
+
+interface AutomationDetail {
+  hero: DetailHero;
+  sections?: DetailSection[];
+  pricing?: DetailPricing;
+  cta?: DetailCTA;
+}
+
+const { detail } = Astro.props as { detail: AutomationDetail };
+
+if (!detail?.hero) {
+  throw new Error('Automation detail data is required.');
+}
+
+const registerUrl = detail.cta?.primaryHref ?? 'https://app-procesia.vercel.app/registro';
+const contactUrl = detail.cta?.secondaryHref ?? '/contacto';
+const sections = detail.sections ?? [];
+
+const defaultPricing: DetailPricing = {
+  tiers: [],
+  offline: {
+    description: 'Contacta con nuestro equipo para conocer las opciones sin conexión disponibles.',
+    extraLabel: 'Módulo offline',
+    price: 'Solicitar presupuesto',
+  },
+};
+
+const pricing = detail.pricing ?? defaultPricing;
+const pricingTiers: DetailPricingTier[] = pricing.tiers ?? [];
+const pricingOffline = pricing.offline;
+---
+<section class="relative bg-[#FAF9F6] py-12 sm:py-16">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid gap-10 lg:grid-cols-[1.2fr_1fr] items-center">
+      <div>
+        {detail.hero.badge && (
+          <span class="inline-flex items-center rounded-full bg-lime-100 text-lime-700 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.08em]">
+            {detail.hero.badge}
+          </span>
+        )}
+        <h1 class="mt-4 text-3xl sm:text-4xl lg:text-[2.9rem] leading-tight font-semibold text-gray-900">
+          {detail.hero.title}
+        </h1>
+        <p class="mt-4 text-lg text-gray-600">
+          {detail.hero.description}
+        </p>
+        {detail.hero.highlights && (
+          <ul class="mt-6 grid gap-3 sm:grid-cols-2">
+            {detail.hero.highlights.map((highlight) => (
+              <li class="flex items-center gap-3">
+                <span class="flex h-2.5 w-2.5 rounded-full bg-lime-400"></span>
+                <span class="text-sm sm:text-base text-gray-700">{highlight}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+        <div class="mt-8 flex flex-col sm:flex-row gap-3">
+          <a
+            href={registerUrl}
+            class="inline-flex items-center justify-center gap-2 rounded-xl bg-gray-900 text-white px-5 py-3 text-sm font-medium shadow-lg shadow-gray-900/10 hover:opacity-90 transition"
+          >
+            {detail.cta?.primaryLabel ?? 'Probar en dashboard'}
+          </a>
+          <a
+            href={contactUrl}
+            class="inline-flex items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white text-gray-900 px-5 py-3 text-sm font-medium hover:bg-gray-100 transition"
+          >
+            {detail.cta?.secondaryLabel ?? 'Hablar con nosotros'}
+          </a>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="rounded-3xl border border-lime-200 bg-white p-6 shadow-sm">
+          <h2 class="text-sm font-semibold tracking-wide text-lime-700 uppercase">Cómo se ve en tu panel</h2>
+          <p class="mt-3 text-sm text-gray-600">
+            {detail.hero.panelCopy ?? 'Sigue la actividad de tu explotación en el dashboard, con indicadores actualizados y alertas en tiempo real.'}
+          </p>
+          {detail.hero.metrics && (
+            <dl class="mt-6 grid gap-4 sm:grid-cols-2">
+              {detail.hero.metrics.map((metric) => (
+                <div class="rounded-2xl bg-[#FAF9F6] p-4">
+                  <dt class="text-xs uppercase tracking-wide text-gray-500">{metric.label}</dt>
+                  <dd class="mt-2 text-2xl font-semibold text-gray-900">{metric.value}</dd>
+                  {metric.caption && <p class="mt-1 text-xs text-gray-500">{metric.caption}</p>}
+                </div>
+              ))}
+            </dl>
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{sections.map((section) => (
+  <section class="py-12 sm:py-16">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900">{section.title}</h2>
+        {section.subtitle && <p class="mt-3 text-gray-600">{section.subtitle}</p>}
+      </div>
+      {section.items && (
+        <div class={`mt-8 ${section.layout === 'timeline' ? 'space-y-6' : 'grid gap-6 sm:grid-cols-2 lg:grid-cols-3'}`}>
+          {section.items.map((item) => (
+            <div
+              class={`rounded-3xl border border-gray-200 bg-white p-6 shadow-sm ${section.layout === 'timeline' ? 'sm:flex sm:items-start sm:gap-5' : ''}`}
+            >
+              {section.layout === 'timeline' && (
+                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gray-900 text-white text-sm font-semibold">
+                  {item.step ?? '•'}
+                </div>
+              )}
+              <div class={section.layout === 'timeline' ? 'mt-4 sm:mt-0' : ''}>
+                <h3 class="text-lg font-semibold text-gray-900">{item.title}</h3>
+                <p class="mt-2 text-sm text-gray-600">{item.description}</p>
+                {item.tags && (
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    {item.tags.map((tag) => (
+                      <span class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 px-3 py-1 text-xs font-medium">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+      {section.callout && (
+        <div class="mt-8 rounded-3xl border border-dashed border-gray-300 bg-white px-6 py-5 text-sm text-gray-600">
+          {section.callout}
+        </div>
+      )}
+    </div>
+  </section>
+))}
+
+<section class="py-12 sm:py-16">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="max-w-2xl">
+      <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900">Planes según tu explotación</h2>
+      <p class="mt-3 text-gray-600">
+        Escoge el tramo que mejor se adapte a tu tamaño o número de usuarios. Puedes escalar sin perder datos.
+      </p>
+    </div>
+    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {pricingTiers.map((tier) => (
+        <div
+          class={`rounded-3xl border ${tier.highlight ? 'border-gray-900 bg-gray-900 text-white shadow-lg shadow-gray-900/10' : 'border-gray-200 bg-white'} p-6 flex flex-col`}
+        >
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-semibold">{tier.name}</h3>
+            {tier.highlight && (
+              <span class="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
+                Popular
+              </span>
+            )}
+          </div>
+          <p class={`mt-2 text-sm ${tier.highlight ? 'text-gray-100' : 'text-gray-600'}`}>{tier.description}</p>
+          <p class="mt-4 text-3xl font-semibold">
+            {tier.price}
+            <span class="ml-1 text-sm font-medium opacity-70">/mes</span>
+          </p>
+          {tier.users && (
+            <p class={`mt-2 text-xs uppercase tracking-wide ${tier.highlight ? 'text-gray-200' : 'text-gray-500'}`}>
+              {tier.users}
+            </p>
+          )}
+          <ul class={`mt-5 space-y-3 text-sm ${tier.highlight ? 'text-gray-100' : 'text-gray-700'}`}>
+            {tier.includes.map((feature) => (
+              <li class="flex items-start gap-2">
+                <span class={`mt-1 h-1.5 w-1.5 rounded-full ${tier.highlight ? 'bg-white' : 'bg-gray-900'}`}></span>
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+          <a
+            href={registerUrl}
+            class={`mt-6 inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium transition ${
+              tier.highlight
+                ? 'bg-white text-gray-900 hover:bg-gray-100'
+                : 'bg-gray-900 text-white hover:opacity-90'
+            }`}
+          >
+            Seleccionar plan
+          </a>
+        </div>
+      ))}
+    </div>
+    <div class="mt-8 grid gap-6 lg:grid-cols-[2fr_1fr]">
+      <div class="rounded-3xl border border-gray-200 bg-white p-6">
+        <h3 class="text-lg font-semibold text-gray-900">Uso sin conexión</h3>
+        <p class="mt-2 text-sm text-gray-600">
+          {pricingOffline?.description ?? 'Contacta con nuestro equipo para conocer las opciones sin conexión disponibles.'}
+        </p>
+        <div class="mt-4 flex flex-wrap gap-3 text-sm text-gray-700">
+          <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 font-medium">
+            {pricingOffline?.extraLabel ?? 'Módulo offline'}
+          </span>
+          <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 font-medium">
+            {pricingOffline?.price ?? 'Presupuesto a medida'}
+          </span>
+        </div>
+      </div>
+      <div class="rounded-3xl border border-gray-200 bg-white p-6">
+        <h3 class="text-lg font-semibold text-gray-900">¿Necesitas algo a medida?</h3>
+        <p class="mt-2 text-sm text-gray-600">
+          {pricing.customCopy ?? 'Integramos tus sistemas propios y adaptamos los flujos a tu operativa real.'}
+        </p>
+        <a
+          href={contactUrl}
+          class="mt-5 inline-flex items-center justify-center rounded-xl border border-gray-300 bg-white px-4 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 transition"
+        >
+          Agendar sesión de diseño
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pb-16">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="rounded-3xl bg-gray-900 text-white px-8 py-10 sm:px-10 sm:py-12 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <div>
+        <h2 class="text-2xl font-semibold">{detail.cta?.finalTitle ?? 'Listo para conectar tus automatizaciones agrónomas?'}</h2>
+        <p class="mt-2 text-sm text-white/80 max-w-xl">
+          {detail.cta?.finalSubtitle ?? 'Activa los módulos directamente en el dashboard o agenda una sesión con nuestro equipo para ayudarte en la puesta en marcha.'}
+        </p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a
+          href={registerUrl}
+          class="inline-flex items-center justify-center rounded-xl bg-white text-gray-900 px-4 py-2.5 text-sm font-semibold hover:bg-gray-100 transition"
+        >
+          {detail.cta?.primaryLabel ?? 'Probar en dashboard'}
+        </a>
+        <a
+          href={contactUrl}
+          class="inline-flex items-center justify-center rounded-xl border border-white/30 text-white px-4 py-2.5 text-sm font-semibold hover:bg-white/10 transition"
+        >
+          {detail.cta?.secondaryLabel ?? 'Hablar con nosotros'}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

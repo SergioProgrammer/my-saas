@@ -1,0 +1,148 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.jsx";
+import AutomationDetailLayout from "../../components/AutomationDetailLayout.astro";
+
+const detail = {
+  hero: {
+    badge: "Agronegocios",
+    title: "Tratamientos fitosanitarios asistidos",
+    description:
+      "Programa, ejecuta y documenta tratamientos por parcela con alertas de seguridad y trazabilidad integral.",
+    highlights: [
+      "Calendario inteligente por cultivo",
+      "Alertas meteorológicas y periocidad",
+      "Registro oficial en un clic",
+      "Integrado con stock y pedidos",
+    ],
+    panelCopy:
+      "Desde el dashboard planificas tratamientos, controlas stock asociado y sigues la ejecución en tiempo real.",
+    metrics: [
+      { label: "Cumplimiento normativo", value: "100%", caption: "Documentación homologada" },
+      { label: "Tiempo de preparación", value: "-40%", caption: "Menos tiempo generando partes" },
+    ],
+  },
+  sections: [
+    {
+      title: "Qué automatiza",
+      subtitle: "Controla cada tratamiento de forma segura y alineada con normativa.",
+      items: [
+        {
+          title: "Planificación por cultivo",
+          description:
+            "El sistema sugiere tratamientos según plagas registradas, ventanas de seguridad y recomendaciones técnicas.",
+          tags: ["IA recomendadora", "Calendario"],
+        },
+        {
+          title: "Check-list de seguridad",
+          description:
+            "Genera protocolo de seguridad para aplicadores, con EPIs requeridos y tiempos de reentrada.",
+          tags: ["Seguridad", "EPIs"],
+        },
+        {
+          title: "Registro oficial",
+          description:
+            "Emite el cuaderno de campo y el registro fitosanitario actualizado para inspección.",
+          tags: ["Cuaderno digital", "RGSEAA"],
+        },
+      ],
+    },
+    {
+      title: "Flujo recomendado",
+      subtitle: "Del aviso de plaga a la verificación de resultados.",
+      layout: "timeline",
+      items: [
+        { step: "01", title: "Diagnóstico", description: "Detecta incidencia o recibe recomendación automática." },
+        { step: "02", title: "Planifica", description: "Selecciona producto, dosis y ventana de aplicación sugerida." },
+        { step: "03", title: "Ejecuta", description: "Los aplicadores reciben instrucciones y registran la aplicación, incluso offline." },
+        { step: "04", title: "Reporta", description: "Se genera informe con lotes utilizados, operarios y tiempos de carencia." },
+      ],
+    },
+    {
+      title: "Integraciones técnicas",
+      subtitle: "Conecta el módulo con sensores, estaciones y laboratorios.",
+      items: [
+        {
+          title: "Estaciones meteorológicas",
+          description:
+            "Sincroniza pronósticos para ajustar ventanas de seguridad y prohibir aplicaciones en condiciones no aptas.",
+          tags: ["Davis", "Meteo"],
+        },
+        {
+          title: "Laboratorios",
+          description:
+            "Recibe análisis de residuos y enlaza resultados con cada tratamiento aplicado.",
+          tags: ["Residuo cero"],
+        },
+        {
+          title: "Sensores de campo",
+          description:
+            "Activa alertas por humedad o presencia de plagas para disparar nuevas recomendaciones.",
+          tags: ["IoT", "Sensórica"],
+        },
+      ],
+      callout:
+        "Incluimos plantillas certificadas y soporte en auditorías de Producción Integrada o GlobalG.A.P.",
+    },
+  ],
+  pricing: {
+    tiers: [
+      {
+        name: "Explotación especializada",
+        description: "Para fincas con hasta 200 hectáreas y equipo reducido.",
+        price: "64,99 €",
+        users: "5 aplicadores / 2 técnicos",
+        includes: [
+          "Planificador por cultivo",
+          "Checklist de seguridad",
+          "Registro digital básico",
+        ],
+      },
+      {
+        name: "Producción integrada",
+        description: "Gestiona múltiples cultivos y turnos con normativa exigente.",
+        price: "194,99 €",
+        users: "15 usuarios",
+        includes: [
+          "Alertas meteorológicas",
+          "Integración con stock",
+          "Cuaderno digital avanzado",
+        ],
+        highlight: true,
+      },
+      {
+        name: "Cooperativa + Laboratorio",
+        description: "Coordina técnicos, aplicadores y laboratorio con reporting consolidado.",
+        price: "269,99 €",
+        users: "Usuarios ilimitados",
+        includes: [
+          "Integraciones IoT",
+          "Automatización de residuo",
+          "Soporte auditoría",
+        ],
+      },
+    ],
+    offline: {
+      description:
+        "Los aplicadores pueden seguir instrucciones y registrar aplicaciones sin cobertura; el sistema guarda evidencia con sello temporal al sincronizar.",
+      extraLabel: "Cuaderno offline",
+      price: "+20,99 € / mes por brigada",
+    },
+    customCopy: "¿Necesitas normativa específica (eco, biodinámico, exportación)? Configuramos las reglas para tu explotación.",
+  },
+  cta: {
+    primaryLabel: "Gestionar tratamientos",
+    secondaryLabel: "Hablar con un agrónomo",
+    secondaryHref: "https://cal.com/procesia/agro",
+    finalTitle: "Tu cuaderno fitosanitario siempre al día",
+    finalSubtitle:
+      "Programa, ejecuta y certifica tratamientos sin salir del dashboard, unido al resto de automatizaciones agrónomas.",
+  },
+};
+---
+<Layout>
+  <Navbar />
+  <AutomationDetailLayout detail={detail} />
+  <Footer client:load />
+</Layout>

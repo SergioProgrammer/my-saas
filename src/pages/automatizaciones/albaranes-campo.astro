@@ -1,0 +1,147 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.jsx";
+import AutomationDetailLayout from "../../components/AutomationDetailLayout.astro";
+
+const detail = {
+  hero: {
+    badge: "Agronegocios",
+    title: "Albaranes digitales de campo",
+    description:
+      "Digitaliza la entrada y salida de producto en campo con OCR especializado y sincronización instantánea.",
+    highlights: [
+      "Captura desde móvil u hoja de ruta",
+      "Reconocimiento OCR entrenado para formatos agrarios",
+      "Asignación automática a cooperativa o cliente",
+      "Firma digital para transportistas",
+    ],
+    panelCopy:
+      "Sube albaranes desde la app, valida datos y consulta estados desde el dashboard con filtros avanzados.",
+    metrics: [
+      { label: "Procesos sin papel", value: "92%", caption: "Documentos digitalizados" },
+      { label: "Tiempo de registro", value: "-70%", caption: "Frente al proceso manual" },
+    ],
+  },
+  sections: [
+    {
+      title: "Qué automatiza",
+      subtitle: "Centraliza la documentación logística de campo en cuestión de minutos.",
+      items: [
+        {
+          title: "Captura en origen",
+          description:
+            "Los transportistas o encargados fotografían el albarán y el OCR extrae datos clave automáticamente.",
+          tags: ["OCR especializado", "App móvil"],
+        },
+        {
+          title: "Validación inteligente",
+          description:
+            "Detecta discrepancias de kilos, variedades o matrículas y avisa para su corrección inmediata.",
+          tags: ["Validación automática", "Alertas"],
+        },
+        {
+          title: "Integración contable",
+          description:
+            "Envía datos al ERP, genera pre-facturas y asocia el albarán al tratamiento o pedido correspondiente.",
+          tags: ["ERP", "Facturación"],
+        },
+      ],
+    },
+    {
+      title: "Flujo digital",
+      subtitle: "Del escaneo a la aprobación en cuatro pasos.",
+      layout: "timeline",
+      items: [
+        { step: "01", title: "Escanea", description: "Captura el albarán desde móvil o tablet." },
+        { step: "02", title: "Reconoce", description: "El OCR detecta productor, kilos, matrículas y destino." },
+        { step: "03", title: "Valida", description: "Revisa incidencias y aprueba desde el dashboard." },
+        { step: "04", title: "Comparte", description: "Envía al ERP o comparte con cliente/cooperativa automáticamente." },
+      ],
+    },
+    {
+      title: "Documentación disponible",
+      subtitle: "Cumple con las exigencias de trazabilidad y auditoría.",
+      items: [
+        {
+          title: "Histórico navegable",
+          description:
+            "Consulta albaranes por parcela, conductor o ruta. Exporta lotes completos para auditoría.",
+          tags: ["Filtros avanzados"],
+        },
+        {
+          title: "Firmas digitales",
+          description:
+            "Recoge firma en pantalla o añade sello digital en segundos, con registro de hora y coordenadas.",
+          tags: ["Firma biométrica"],
+        },
+        {
+          title: "Soporte multi-formato",
+          description:
+            "Acepta fotos, PDFs o documentos escaneados. El sistema mejora la calidad automáticamente.",
+          tags: ["PDF", "Imagen"],
+        },
+      ],
+      callout: "Incluye configuración de plantillas para tus albaranes habituales y entrenamiento adicional del OCR si lo necesitas.",
+    },
+  ],
+  pricing: {
+    tiers: [
+      {
+        name: "Finca con ventas directas",
+        description: "Ideal para producciones pequeñas con hasta 150 albaranes al mes.",
+        price: "54,99 €",
+        users: "5 usuarios",
+        includes: [
+          "OCR estándar",
+          "Archivo digital por lote",
+          "Exportación PDF",
+        ],
+      },
+      {
+        name: "Cooperativa regional",
+        description: "Gestiona múltiples rutas y transportistas con control centralizado.",
+        price: "84,99 €",
+        users: "15 usuarios",
+        includes: [
+          "Validación automática",
+          "Firma digital",
+          "Integración ERP",
+        ],
+        highlight: true,
+      },
+      {
+        name: "Grupo agroindustrial",
+        description: "Escalabilidad para miles de documentos al mes y automatización avanzada.",
+        price: "149,99 €",
+        users: "Usuarios ilimitados",
+        includes: [
+          "OCR entrenado a medida",
+          "API de importación masiva",
+          "Soporte 24/7",
+        ],
+      },
+    ],
+    offline: {
+      description:
+        "Captura documentos incluso sin cobertura. El reconocimiento se ejecuta automáticamente al reconectar.",
+      extraLabel: "OCR offline con cola",
+      price: "+12,99 € / mes",
+    },
+    customCopy: "¿Necesitas integrarte con transportistas externos o sello electrónico homologado? Lo configuramos contigo.",
+  },
+  cta: {
+    primaryLabel: "Digitalizar albaranes",
+    secondaryLabel: "Reservar consultoría",
+    secondaryHref: "https://cal.com/procesia/agro",
+    finalTitle: "Despídete del papel en tus rutas",
+    finalSubtitle:
+      "Digitaliza cada entrada o salida desde el campo y gana trazabilidad inmediata en tu dashboard.",
+  },
+};
+---
+<Layout>
+  <Navbar />
+  <AutomationDetailLayout detail={detail} />
+  <Footer client:load />
+</Layout>

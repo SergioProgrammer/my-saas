@@ -1,0 +1,154 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.jsx";
+import AutomationDetailLayout from "../../components/AutomationDetailLayout.astro";
+
+const detail = {
+  hero: {
+    badge: "Agronegocios",
+    title: "Stock inteligente de insumos",
+    description:
+      "Controla existencias de semillas, fertilizantes y fitosanitarios con alarmas predictivas y reposición automática.",
+    highlights: [
+      "Inventario centralizado por almacén y parcela",
+      "Alertas según consumo real y caducidad",
+      "Pedidos sugeridos según campaña",
+      "Compatible con escáneres y lotes",
+    ],
+    panelCopy:
+      "Consulta stock disponible, consumo semanal y lotes próximos a caducar desde un mismo panel.",
+    metrics: [
+      { label: "Cobertura", value: "45 días", caption: "Stock medio garantizado" },
+      { label: "Mermas", value: "-22%", caption: "Reducción de caducidades" },
+    ],
+  },
+  sections: [
+    {
+      title: "Qué automatiza",
+      subtitle: "Evita roturas de stock y cumple con la normativa fitosanitaria sin esfuerzo.",
+      items: [
+        {
+          title: "Visibilidad total",
+          description:
+            "Registra entradas, consumos y devoluciones por lote, proveedor y finca. Todo actualizado en el dashboard.",
+          tags: ["Lotes", "Histórico de movimientos"],
+        },
+        {
+          title: "Alertas inteligentes",
+          description:
+            "Define mínimos por campaña y recibe alertas por consumo anómalo, caducidad o incompatibilidades de mezcla.",
+          tags: ["Mínimos dinámicos", "Caducidad"],
+        },
+        {
+          title: "Reposición automática",
+          description:
+            "Genera pedidos sugeridos basados en la carga de trabajo planificada y envía solicitudes al proveedor preferido.",
+          tags: ["Pedidos sugeridos", "Integrado con compras"],
+        },
+      ],
+    },
+    {
+      title: "Flujo operativo",
+      subtitle: "Desde el almacén hasta el campo, sincronizado.",
+      layout: "timeline",
+      items: [
+        {
+          step: "01",
+          title: "Recepción y control",
+          description: "Escanea lotes, registra condiciones y clasifica por parcela o nave de almacenamiento.",
+        },
+        {
+          step: "02",
+          title: "Consumo documentado",
+          description: "Los aplicadores registran consumos desde móvil u offline, quedando reflejado en el dashboard.",
+        },
+        {
+          step: "03",
+          title: "Reabastecimiento",
+          description: "Cuando un insumo baja de mínimo, se genera pedido automático para revisión del responsable.",
+        },
+      ],
+    },
+    {
+      title: "Métricas clave",
+      subtitle: "Toma decisiones basadas en datos actualizados.",
+      items: [
+        {
+          title: "Consumo por hectárea",
+          description: "Compara consumos reales vs. planificados y ajusta dosis en campañas futuras.",
+          tags: ["Dashboard en vivo"],
+        },
+        {
+          title: "Valor de inventario",
+          description: "Valora existencias por coste promedio o FIFO y exporta a tu contabilidad.",
+          tags: ["Integración contable"],
+        },
+        {
+          title: "Trazabilidad",
+          description: "Accede al historial completo de cada lote, aplicación y trabajador que lo utilizó.",
+          tags: ["Registro fitosanitario"],
+        },
+      ],
+    },
+  ],
+  pricing: {
+    tiers: [
+      {
+        name: "Almacén único",
+        description: "Pequeñas fincas con un solo punto de almacenaje.",
+        price: "79,99 €",
+        users: "5 usuarios operativos",
+        includes: [
+          "Inventario por lote",
+          "Alertas de mínimos",
+          "Exportación mensual",
+        ],
+      },
+      {
+        name: "Multi-almacén",
+        description: "Fincas medianas con varios almacenes o centros de mezcla.",
+        price: "169,99 €",
+        users: "15 usuarios",
+        includes: [
+          "Reposición automática",
+          "Integración con compras",
+          "Alertas por caducidad",
+        ],
+        highlight: true,
+      },
+      {
+        name: "Cooperativa",
+        description: "Centraliza stock de varias explotaciones con gobierno del dato.",
+        price: "249,99 €",
+        users: "Usuarios ilimitados",
+        includes: [
+          "API y conectores con ERP",
+          "Controles avanzados de lotes",
+          "Reporting consolidado",
+        ],
+      },
+    ],
+    offline: {
+      description:
+        "Los operarios pueden registrar consumos desde zonas sin cobertura. Los datos se sincronizan cuando recuperan red.",
+      extraLabel: "Captura offline incluida",
+      price: "+40,99 € / mes por almacén",
+    },
+    customCopy: "¿Necesitas conectar básculas, sensores o lectura automática de códigos GS1? Lo integramos por ti.",
+  },
+  cta: {
+    primaryLabel: "Controlar stock ahora",
+    secondaryLabel: "Recibir asesoramiento",
+    secondaryHref: "https://cal.com/procesia/agro",
+    finalTitle: "Evita roturas y aprovecha cada campaña",
+    finalSubtitle:
+      "Mantén tus insumos bajo control, con alertas inteligentes y pedidos listos para aprobar desde el dashboard.",
+  },
+};
+---
+<Layout>
+  <Navbar />
+  <AutomationDetailLayout detail={detail} />
+  <Footer client:load />
+</Layout>

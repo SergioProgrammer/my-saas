@@ -1,0 +1,156 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.jsx";
+import AutomationDetailLayout from "../../components/AutomationDetailLayout.astro";
+
+const detail = {
+  hero: {
+    badge: "Agronegocios",
+    title: "Control de turnos en campo",
+    description:
+      "Planifica turnos, asigna cuadrillas y sincroniza la ejecución diaria de la finca con avisos automáticos en el dashboard.",
+    highlights: [
+      "Sincronización automática con fichajes móviles",
+      "Alertas de solapamiento y jornadas incompletas",
+      "Resumen diario listo para auditoría laboral",
+      "Integrado con el módulo de producción del dashboard",
+    ],
+    panelCopy:
+      "Visualiza quién está en campo, qué parcela atiende y cuánto tiempo queda de jornada. Ajusta turnos en segundos desde el dashboard.",
+    metrics: [
+      { label: "Cuadrillas activas", value: "12", caption: "Monitorizadas en tiempo real" },
+      { label: "Horas ahorradas", value: "18%", caption: "Menos tiempo coordinando turnos" },
+    ],
+  },
+  sections: [
+    {
+      title: "Qué automatiza",
+      subtitle: "Haz que la planificación de mano de obra agrícola sea dinámica y transparente.",
+      items: [
+        {
+          title: "Cuadrillas por cultivo",
+          description:
+            "Genera turnos sugeridos según cultivo, prioridad y mano de obra disponible. Ajusta límites y asigna responsables.",
+          tags: ["Asignación dinámica", "Prioridades por cultivo"],
+        },
+        {
+          title: "Fichajes y presencia",
+          description:
+            "Registra entradas y salidas desde móvil u offline. El sistema valida horas, descansos y te alerta de incidencias.",
+          tags: ["Modo sin conexión", "Alertas automáticas"],
+        },
+        {
+          title: "Costes laborales",
+          description:
+            "Calcula el coste por jornada y por parcela para tener visibilidad del margen antes de cerrar la semana.",
+          tags: ["Coste por hectárea", "Integración contable"],
+        },
+      ],
+    },
+    {
+      title: "Cómo funciona",
+      subtitle: "Un flujo pensado para responsables de campo y administración.",
+      layout: "timeline",
+      items: [
+        {
+          step: "01",
+          title: "Planifica",
+          description: "Importa calendario de labores y define prioridades para cada cultivo o parcela.",
+        },
+        {
+          step: "02",
+          title: "Asigna y valida",
+          description: "El sistema propone cuadrillas. Ajusta horas, aprueba y envía los turnos a los capataces.",
+        },
+        {
+          step: "03",
+          title: "Controla",
+          description: "Fichajes automáticos, alertas de incidencias y reporte diario con diferencias vs. plan.",
+        },
+      ],
+    },
+    {
+      title: "Integraciones disponibles",
+      subtitle: "Conecta tu realidad de campo con los sistemas que ya utilizas.",
+      items: [
+        {
+          title: "ERP agrario / SAG",
+          description: "Envía horas aprobadas y costes por cultivo directamente a tu ERP o software contable.",
+          tags: ["Gea", "A3ERP", "Odoo"],
+        },
+        {
+          title: "Dispositivos biométricos",
+          description: "Sincroniza tornos o fichadores existentes para que todo el equipo esté en la misma plataforma.",
+          tags: ["ZKTeco", "Control horario"],
+        },
+        {
+          title: "Reportes de inspección",
+          description: "Genera informes listos para inspección laboral con un clic desde el dashboard.",
+          tags: ["Laboral", "Auditoría"],
+        },
+      ],
+      callout:
+        "Incluimos formación express para encargados de campo y soporte prioritario durante la puesta en marcha.",
+    },
+  ],
+  pricing: {
+    tiers: [
+      {
+        name: "Micro explotación",
+        description: "Hasta 20 trabajadores activos al mes con planificación básica.",
+        price: "89,99 €",
+        users: "20 usuarios / 2 responsables",
+        includes: [
+          "Turnos recurrentes y extraordinarios",
+          "Histórico de cuadrillas",
+          "Exportación a Excel",
+        ],
+      },
+      {
+        name: "Finca mediana",
+        description: "Planificación avanzada para organizar varias cuadrillas y parcelas.",
+        price: "169,99 €",
+        users: "50 usuarios / 5 responsables",
+        includes: [
+          "Alertas automáticas de incidencias",
+          "Coste laboral por cultivo",
+          "Integración con ERP",
+        ],
+        highlight: true,
+      },
+      {
+        name: "Cooperativa",
+        description: "Gestión centralizada de explotaciones con reporting consolidado.",
+        price: "249,99 €",
+        users: "Hasta 150 usuarios",
+        includes: [
+          "Multi-explotación y sucursales",
+          "API abierta para integraciones",
+          "Soporte premium",
+        ],
+      },
+    ],
+    offline: {
+      description:
+        "El módulo funciona sin conexión con sincronización diferida. Los capataces pueden asignar y fichar turnos aunque no haya cobertura.",
+      extraLabel: "Sincronización offline",
+      price: "+89,99 € / mes por explotación",
+    },
+    customCopy: "¿Gestionas más de 150 trabajadores o necesitas formato SEPE personalizado? Diseñamos el flujo contigo.",
+  },
+  cta: {
+    primaryLabel: "Activar en dashboard",
+    secondaryLabel: "Solicitar demo guiada",
+    secondaryHref: "https://cal.com/procesia/agro",
+    finalTitle: "Agiliza la coordinación de cuadrillas",
+    finalSubtitle:
+      "Conecta el control horario al resto de tus automatizaciones y gana visibilidad total de la jornada agraria.",
+  },
+};
+---
+<Layout>
+  <Navbar />
+  <AutomationDetailLayout detail={detail} />
+  <Footer client:load />
+</Layout>
