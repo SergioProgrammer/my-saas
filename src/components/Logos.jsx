@@ -3,47 +3,25 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
-  SiGmail,
-  SiGooglecalendar,
-  SiGooglesheets,
-  SiTwilio,
-  SiOpenai,
-  SiSlack,
-  SiZoom,
-  SiNotion,
-  SiZapier,
-  SiTrello,
-  SiHubspot,
-  SiShopify,
-  SiStripe,
-  SiAirtable,
-} from "react-icons/si";
+  GiFarmTractor,
+  GiPlantRoots,
+  GiWaterDrop,
+  GiSatelliteCommunication,
+  GiGrain,
+  GiWindmill,
+  GiPlantWatering,
+} from "react-icons/gi";
+import { WiDaySunny } from "react-icons/wi";
 
 const integrations = [
-  { name: "Gmail", icon: <SiGmail className="w-10 h-10 text-red-500" /> },
-  { name: "Google Calendar", icon: <SiGooglecalendar className="w-10 h-10 text-blue-500" /> },
-  { name: "Google Sheets", icon: <SiGooglesheets className="w-10 h-10 text-green-500" /> },
-  { name: "Twilio", icon: <SiTwilio className="w-10 h-10 text-pink-600" /> },
-  { name: "ChatGPT", icon: <SiOpenai className="w-10 h-10 text-gray-800" /> },
-  { name: "Slack", icon: <SiSlack className="w-10 h-10 text-purple-600" /> },
-  { name: "Zoom", icon: <SiZoom className="w-10 h-10 text-blue-400" /> },
-  { name: "Notion", icon: <SiNotion className="w-10 h-10 text-black" /> },
-  { name: "Zapier", icon: <SiZapier className="w-10 h-10 text-orange-500" /> },
-  { name: "Trello", icon: <SiTrello className="w-10 h-10 text-sky-500" /> },
-  { name: "HubSpot", icon: <SiHubspot className="w-10 h-10 text-orange-600" /> },
-  { name: "Shopify", icon: <SiShopify className="w-10 h-10 text-green-600" /> },
-  { name: "Stripe", icon: <SiStripe className="w-10 h-10 text-indigo-500" /> },
-  // Placeholders
-  { 
-  name: "ElevenLabs", 
-  icon: <img src="/logos/eleven.svg" alt="ElevenLabs" className="h-10 w-auto" /> 
-},
-  { 
-  name: "Lovable", 
-  icon: <img src="/logos/lovable.svg" alt="lovable" className="h-10 w-auto" /> 
-},
-  { name: "Make.com", icon: <div className="text-lg font-semibold">Make</div> },
-  { name: "Airtable", icon: <SiAirtable className="w-10 h-10 text-indigo-500" /> },
+  { name: "Maquinaria conectada", icon: <GiFarmTractor className="w-10 h-10 text-lime-700" /> },
+  { name: "Cuaderno digital SIEX", icon: <GiPlantRoots className="w-10 h-10 text-emerald-600" /> },
+  { name: "Sondas de humedad", icon: <GiWaterDrop className="w-10 h-10 text-blue-500" /> },
+  { name: "Satélites & NDVI", icon: <WiDaySunny className="w-10 h-10 text-amber-500" /> },
+  { name: "Sensores de silo", icon: <GiGrain className="w-10 h-10 text-yellow-600" /> },
+  { name: "Estaciones meteo", icon: <GiWindmill className="w-10 h-10 text-sky-500" /> },
+  { name: "Aplicaciones fitosanitarias", icon: <GiPlantWatering className="w-10 h-10 text-green-600" /> },
+  { name: "Gateways IoT", icon: <GiSatelliteCommunication className="w-10 h-10 text-gray-700" /> },
 ];
 
 export default function IntegrationsMarquee() {

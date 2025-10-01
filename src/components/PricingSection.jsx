@@ -2,51 +2,51 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import {
-  FaRobot,
-  FaCrown,
-} from "react-icons/fa";
+import { FaSeedling, FaTractor, FaWarehouse } from "react-icons/fa";
 
 const plans = [
   {
-    title: "Demo 7 días GRATIS",
-    price: "Gratis",
+    title: "Piloto de trazabilidad",
+    price: "14 días sin coste",
     description:
-      "Prueba ProcesIA sin coste y descubre cómo automatizar en pocos clics.",
+      "Digitaliza una explotación completa, importa tu cuaderno y valida la automatización con nuestro equipo agrónomo.",
     features: [
-      "✨ 1 automatización de prueba",
-      "✔ Acceso completo al panel",
-      "✔ Soporte básico",
+      "✨ Cuaderno digital guiado",
+      "✔ Conexión a sensores y clima",
+      "✔ Soporte agronómico incluido",
     ],
-    icon: <FaRobot className="w-8 h-8 text-indigo-500" />,
-    cta: "Empieza gratis",
+    icon: <FaSeedling className="w-8 h-8 text-emerald-600" />,
+    cta: "Solicitar piloto",
     highlight: true,
+    ctaHref: "https://cal.com/procesia/agro",
   },
   {
-    title: "Añade más de 2 automatizaciones",
-    price: "5% descuento",
+    title: "Operación multicuartel",
+    price: "Desde 89 €/mes",
     description:
-      "Activa automatizaciones ilimitadas y conecta Gmail, WhatsApp o Calendar sin complicaciones.",
+      "Activa automatizaciones de trazabilidad, riego y stock para varias parcelas con reporte semanal.",
     features: [
-      "✔ Más de 2 automatizaciones activas",
-      "✔ Cambia tu automatización en cualquier momento",
-      "✔ Soporte incluido",
+      "✔ Automatizaciones ilimitadas",
+      "✔ Roles para cuadrillas y asesores",
+      "✔ Reporting agronómico avanzado",
     ],
-    icon: <FaCrown className="w-8 h-8 text-yellow-500" />,
-    cta: "Ir a la tienda",
+    icon: <FaTractor className="w-8 h-8 text-lime-600" />,
+    cta: "Hablar con ventas",
+    ctaHref: "https://cal.com/procesia/operaciones",
   },
   {
-    title: "Añade más de 5 automatizaciones",
-    price: "10% descuento",
+    title: "Cooperativas y grupos",
+    price: "Plan a medida",
     description:
-      "Activa automatizaciones ilimitadas y conecta Gmail, WhatsApp o Calendar sin complicaciones.",
+      "Centraliza varias explotaciones, integra ERPs y comparte trazabilidad con certificadoras y clientes.",
     features: [
-      "✔ Más de 5 automatizaciones activas",
-      "✔ Cambia tu automatización en cualquier momento",
-      "✔ Soporte incluido",
+      "✔ Multi-explotación y multimoneda",
+      "✔ Dashboards personalizados",
+      "✔ Integración a medida",
     ],
-    icon: <FaCrown className="w-8 h-8 text-yellow-500" />,
-    cta: "Ir a la tienda",
+    icon: <FaWarehouse className="w-8 h-8 text-indigo-600" />,
+    cta: "Agendar asesoría",
+    ctaHref: "https://cal.com/procesia/cooperativas",
   },
 ];
 
@@ -116,14 +116,10 @@ export default function Pricing() {
     <section className="bg-gradient-to-b from-gray-50 to-white py-24 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
         <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900">
-          Planes 
+          Planes para el campo
         </h2>
         <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-          ProcesIA funciona con{" "}
-          <span className="font-semibold text-gray-900">
-            suscripciones por automatización
-          </span>
-          . Cuantas más automatizaciones actives, más ahorrarás.
+          Escala tu trazabilidad agrícola con acompañamiento experto. Ajustamos la plataforma a cada explotación y cooperativa.
         </p>
 
         {/* Grid Desktop */}
@@ -169,7 +165,7 @@ export default function Pricing() {
               </div>
               <div className="mt-8">
                 <a
-                  href="/tienda"
+                  href={plan.ctaHref ?? "/tienda"}
                   className={`block w-full px-6 py-3 text-center rounded-xl font-medium transition ${
                     plan.highlight
                       ? "bg-indigo-600 text-white hover:bg-indigo-500"
@@ -221,7 +217,7 @@ export default function Pricing() {
                 </div>
                 <div className="mt-6">
                   <a
-                    href="/registro"
+                    href={plan.ctaHref ?? "/tienda"}
                     className="block w-full px-5 py-3 text-center bg-indigo-600 text-white rounded-xl font-medium hover:bg-indigo-500 transition"
                   >
                     {plan.cta}

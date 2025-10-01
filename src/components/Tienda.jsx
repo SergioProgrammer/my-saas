@@ -1,63 +1,63 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { Zap, Mail, Workflow, ShoppingCart, Bell, BarChart } from 'lucide-react'
+import { Zap, ClipboardList, Droplet, Satellite, Boxes, ShieldCheck, Tractor, Sprout } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const automations = [
   {
-    id: 'email-config',
-    name: 'IA Responde tus Emails',
-    description: 'Responde automáticamente a emails usando IA.',
-    icon: Mail,
-    accentBg: 'bg-rose-100',
-    accentIcon: 'text-rose-600',
-    price: '24,99 €/mes',
-  },
-  {
-    id: 'carrito-abandonado',
-    name: 'Recordatorio de carrito',
-    description: 'Envía recordatorios de carritos abandonados.',
-    icon: ShoppingCart,
-    accentBg: 'bg-amber-100',
-    accentIcon: 'text-amber-600',
-    price: '19,99 €/mes',
-  },
-  {
-    id: 'leads-a-sheets',
-    name: 'Leads → Google Sheets',
-    description: 'Añade leads automáticamente a tus hojas de cálculo.',
-    icon: Workflow,
+    id: 'cuaderno-digital',
+    name: 'Cuaderno de campo con IA',
+    description: 'Registra labores, evidencias y recetas por parcela y exporta a SIEX en un clic.',
+    icon: ClipboardList,
     accentBg: 'bg-emerald-100',
-    accentIcon: 'text-emerald-600',
-    price: '14,99 €/mes',
+    accentIcon: 'text-emerald-700',
+    price: '72,00 €/mes',
   },
   {
-    id: 'alerta-pago',
-    name: 'Alerta de pago fallido',
-    description: 'Recibe un aviso inmediato cuando un pago falle.',
-    icon: Bell,
+    id: 'riego-precision',
+    name: 'Riego de precisión',
+    description: 'Combina sondas de humedad, clima y programación automática para optimizar riegos.',
+    icon: Droplet,
     accentBg: 'bg-sky-100',
     accentIcon: 'text-sky-600',
-    price: '29,99 €/mes',
+    price: '64,00 €/mes',
   },
   {
-    id: 'post-a-redes',
-    name: 'Post → Redes sociales',
-    description: 'Publica en redes automáticamente tus novedades.',
-    icon: Zap,
-    accentBg: 'bg-purple-100',
-    accentIcon: 'text-purple-600',
-    price: '34,99 €/mes',
+    id: 'planificador-labores',
+    name: 'Planificador de labores y maquinaria',
+    description: 'Asigna tareas por cuadrilla, controla maquinaria y genera partes automáticamente.',
+    icon: Tractor,
+    accentBg: 'bg-lime-100',
+    accentIcon: 'text-lime-700',
+    price: '58,00 €/mes',
   },
   {
-    id: 'reportes-auto',
-    name: 'Reportes automáticos',
-    description: 'Obtén reportes periódicos sin mover un dedo.',
-    icon: BarChart,
+    id: 'trazabilidad-lotes',
+    name: 'Trazabilidad de lotes',
+    description: 'Sincroniza cosecha, almacenes y distribución con etiquetas y QR para auditorías.',
+    icon: Boxes,
+    accentBg: 'bg-amber-100',
+    accentIcon: 'text-amber-700',
+    price: '89,00 €/mes',
+  },
+  {
+    id: 'monitoreo-satelital',
+    name: 'Monitoreo satelital y NDVI',
+    description: 'Automatiza alertas según vigor, estrés hídrico y pronósticos climáticos.',
+    icon: Satellite,
     accentBg: 'bg-indigo-100',
     accentIcon: 'text-indigo-600',
-    price: '39,99 €/mes',
+    price: '76,00 €/mes',
+  },
+  {
+    id: 'cumplimiento-fitosanitario',
+    name: 'Cumplimiento fitosanitario',
+    description: 'Controla stock de insumos, recetas y carencias con avisos al instante.',
+    icon: ShieldCheck,
+    accentBg: 'bg-rose-100',
+    accentIcon: 'text-rose-600',
+    price: '67,00 €/mes',
   },
 ]
 
@@ -95,7 +95,7 @@ export default function Tienda() {
     <section className="bg-[#faf9f6] py-20 overflow-hidden">
   <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
     <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 break-words">
-      Tienda de automatizaciones
+      Tienda de automatizaciones agronómicas
     </h2>
 
     {/* Grid en desktop */}
@@ -126,7 +126,7 @@ export default function Tienda() {
               href="https://app-procesia.vercel.app/registro"
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-black text-white px-4 py-2 text-sm font-medium shadow hover:opacity-90 transition"
             >
-              <Zap className="h-4 w-4" /> Instalar
+              <Zap className="h-4 w-4" /> Activar
             </a>
           </div>
         </motion.div>
@@ -158,10 +158,10 @@ export default function Tienda() {
             <div className="mt-6 flex items-center justify-between">
               <span className="font-semibold text-gray-900">{a.price}</span>
               <a
-                href="#"
+                href="https://app-procesia.vercel.app/registro"
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-black text-white px-4 py-2 text-sm font-medium shadow hover:opacity-90 transition"
               >
-                <Zap className="h-4 w-4" /> Instalar
+                <Zap className="h-4 w-4" /> Activar
               </a>
             </div>
           </div>

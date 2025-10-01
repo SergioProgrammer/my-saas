@@ -8,20 +8,20 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Columna 1: Marca */}
           <div>
-            <h2 className="text-2xl font-bold text-gray-900">ProcesIA</h2>
+            <h2 className="text-2xl font-bold text-gray-900">ProcesIA Agro</h2>
             <p className="mt-4 text-gray-600 text-sm">
-              Automatiza tus procesos con IA y conecta tus herramientas favoritas.
+              Impulsa la trazabilidad agrícola conectando cuadernos, sensores y equipos con automatizaciones guiadas por IA.
             </p>
           </div>
 
           {/* Columna 2: Productos */}
           <div>
-            <h3 className="text-lg font-semibold text-gray-900">Productos</h3>
+            <h3 className="text-lg font-semibold text-gray-900">Soluciones</h3>
             <ul className="mt-4 space-y-2 text-gray-600 text-sm">
-              <li><a href="#" className="hover:text-gray-900">Automatizaciones</a></li>
-              <li><a href="#" className="hover:text-gray-900">Integraciones</a></li>
-              <li><a href="#" className="hover:text-gray-900">Precios</a></li>
-              <li><a href="#" className="hover:text-gray-900">Demo</a></li>
+              <li><a href="/tienda" className="hover:text-gray-900">Cuaderno digital + IA</a></li>
+              <li><a href="/tienda" className="hover:text-gray-900">Riego y clima conectado</a></li>
+              <li><a href="/tienda" className="hover:text-gray-900">Gestión de insumos</a></li>
+              <li><a href="/demo" className="hover:text-gray-900">Recorrido guiado</a></li>
             </ul>
           </div>
 
@@ -29,10 +29,10 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold text-gray-900">Recursos</h3>
             <ul className="mt-4 space-y-2 text-gray-600 text-sm">
-              <li><a href="#" className="hover:text-gray-900">Documentación</a></li>
-              <li><a href="#" className="hover:text-gray-900">Blog</a></li>
-              <li><a href="#" className="hover:text-gray-900">Centro de ayuda</a></li>
-              <li><a href="#" className="hover:text-gray-900">Contacto</a></li>
+              <li><a href="#" className="hover:text-gray-900">Guía SIEX y GlobalG.A.P.</a></li>
+              <li><a href="#" className="hover:text-gray-900">Casos de éxito</a></li>
+              <li><a href="#" className="hover:text-gray-900">Academia ProcesIA</a></li>
+              <li><a href="https://cal.com/procesia/agro" className="hover:text-gray-900">Contacto</a></li>
             </ul>
           </div>
 
@@ -51,7 +51,7 @@ export default function Footer() {
         <div className="border-t border-gray-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           {/* Derechos */}
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} ProcesIA. Todos los derechos reservados.
+            © {new Date().getFullYear()} ProcesIA Agro. Todos los derechos reservados.
           </p>
 
           {/* Redes sociales */}

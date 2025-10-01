@@ -1,11 +1,11 @@
-import { FaClock, FaCheckCircle, FaChartLine, FaLayerGroup } from "react-icons/fa";
+import { FaMapMarkedAlt, FaShieldAlt, FaRobot, FaUsersCog } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const benefits = [
-  { title: "Ahorra tiempo", description: "Automatiza tareas repetitivas y libera horas cada semana.", icon: <FaClock className="w-8 h-8 text-blue-600" /> },
-  { title: "Reduce errores", description: "Confía en las automatizaciones para encargarse de los detalles.", icon: <FaCheckCircle className="w-8 h-8 text-green-600" /> },
-  { title: "Escala sin esfuerzo", description: "Gestiona cientos de flujos con la misma facilidad que uno.", icon: <FaChartLine className="w-8 h-8 text-purple-600" /> },
-  { title: "Centraliza todo", description: "Un solo panel para manejar tus automatizaciones y conexiones.", icon: <FaLayerGroup className="w-8 h-8 text-pink-600" /> },
+  { title: "Trazabilidad certificable", description: "Registra labores, fotos y sensores por lote para cumplir normativas como GlobalG.A.P.", icon: <FaMapMarkedAlt className="w-8 h-8 text-green-600" /> },
+  { title: "Cumplimiento sin papel", description: "Genera cuaderno digital, recetas y reportes sanitarios automáticamente.", icon: <FaShieldAlt className="w-8 h-8 text-emerald-600" /> },
+  { title: "IA para decisiones rápidas", description: "Recibe recomendaciones de riego, tratamientos y compras basadas en tus datos.", icon: <FaRobot className="w-8 h-8 text-blue-600" /> },
+  { title: "Equipo sincronizado", description: "Distribuye tareas a cuadrillas, asesores y proveedores desde un panel compartido.", icon: <FaUsersCog className="w-8 h-8 text-lime-600" /> },
 ];
 
 export default function Benefits() {
@@ -16,10 +16,10 @@ export default function Benefits() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900">
-          Beneficios principales
+          Beneficios para tu campo
         </h2>
         <p className="mt-4 text-base sm:text-lg text-gray-700/80 max-w-2xl mx-auto">
-          Todo lo que necesitas para automatizar tus flujos de trabajo con confianza
+          Todo lo que necesitas para operar con trazabilidad agrícola, cumplimiento normativo y colaboración en tiempo real.
         </p>
       </div>
 

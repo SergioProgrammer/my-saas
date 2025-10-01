@@ -1,42 +1,42 @@
-import { SiGmail, SiWhatsapp, SiGooglecalendar, SiSlack, SiGoogleanalytics, SiTodoist } from "react-icons/si";
+import { GiFarmTractor, GiPlantRoots, GiWaterDrop, GiGrain, GiWindmill, GiPlantWatering } from "react-icons/gi";
 import { motion } from "framer-motion";
 
 const automations = [
   {
-    title: "Recordatorios en Gmail",
-    description: "Envía recordatorios automáticos por correo electrónico.",
-    icon: <SiGmail className="w-8 h-8 text-red-600" />,
-    color: "bg-red-100"
+    title: "Cuaderno digital SIEX",
+    description: "Captura labores, insumos y evidencias por parcela con reportes listos para auditoría.",
+    icon: <GiPlantRoots className="w-8 h-8 text-emerald-600" />,
+    color: "bg-emerald-50"
   },
   {
-    title: "Alertas en WhatsApp",
-    description: "Recibe notificaciones directas en WhatsApp.",
-    icon: <SiWhatsapp className="w-8 h-8 text-green-600" />,
-    color: "bg-green-100"
+    title: "Alertas de riego",
+    description: "Combina sondas de humedad y clima para ajustar turnos y prevenir estrés hídrico.",
+    icon: <GiWaterDrop className="w-8 h-8 text-blue-500" />,
+    color: "bg-sky-50"
   },
   {
-    title: "Eventos en Calendar",
-    description: "Crea y gestiona eventos automáticamente en Google Calendar.",
-    icon: <SiGooglecalendar className="w-8 h-8 text-blue-600" />,
-    color: "bg-blue-100"
+    title: "Planificación de maquinaria",
+    description: "Asigna labores a tractores y equipos con partes automáticos y seguimiento GPS.",
+    icon: <GiFarmTractor className="w-8 h-8 text-lime-600" />,
+    color: "bg-lime-50"
   },
   {
-    title: "Notificaciones en Slack",
-    description: "Automatiza alertas en tus canales de Slack.",
-    icon: <SiSlack className="w-8 h-8 text-purple-600" />,
-    color: "bg-purple-100"
+    title: "Monitoreo satelital",
+    description: "Genera alertas de vigor, heladas y plagas desde imágenes NDVI y pronósticos.",
+    icon: <GiWindmill className="w-8 h-8 text-indigo-500" />,
+    color: "bg-indigo-50"
   },
   {
-    title: "Reportes automáticos",
-    description: "Recibe reportes semanales de actividad y métricas.",
-    icon: <SiGoogleanalytics className="w-8 h-8 text-pink-600" />,
-    color: "bg-pink-100"
+    title: "Control de cosecha",
+    description: "Registra cargas, calibres y lotes para vincularlos con almacenes y ventas.",
+    icon: <GiGrain className="w-8 h-8 text-amber-600" />,
+    color: "bg-amber-50"
   },
   {
-    title: "Tareas recurrentes",
-    description: "Programa recordatorios automáticos de tareas repetitivas.",
-    icon: <SiTodoist className="w-8 h-8 text-yellow-600" />,
-    color: "bg-yellow-100"
+    title: "Aplicaciones fitosanitarias",
+    description: "Verifica carencias, stock y condiciones climáticas antes de cada tratamiento.",
+    icon: <GiPlantWatering className="w-8 h-8 text-rose-500" />,
+    color: "bg-rose-50"
   },
 ];
 
@@ -45,10 +45,10 @@ export default function Automations() {
     <section className="bg-white py-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-tight">
-          Automatizaciones disponibles
+          Automatizaciones para agricultura
         </h2>
         <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-          Conecta tus herramientas favoritas y automatiza procesos clave de tu día a día.
+          Conecta sensores, maquinaria y equipos humanos para ejecutar campañas agrícolas con trazabilidad total.
         </p>
 
         <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">

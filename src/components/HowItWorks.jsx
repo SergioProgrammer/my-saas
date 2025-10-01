@@ -1,24 +1,24 @@
-import { FaUserPlus, FaPlug, FaBolt } from "react-icons/fa";
+import { FaTractor, FaSatelliteDish, FaSeedling } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const steps = [
   {
-    title: "Regístrate",
-    description: "Crea tu cuenta en segundos y accede al panel de control.",
-    icon: <FaUserPlus className="w-8 h-8 text-blue-600" />,
-    bg: "bg-blue-50",
-  },
-  {
-    title: "Conecta tus apps",
-    description: "Vincula Gmail, WhatsApp, Calendar y Slack con un solo clic.",
-    icon: <FaPlug className="w-8 h-8 text-green-600" />,
+    title: "Configura tu explotación",
+    description: "Importa parcelas, lotes y plan de cultivos para crear el gemelo digital del campo.",
+    icon: <FaTractor className="w-8 h-8 text-green-700" />,
     bg: "bg-green-50",
   },
   {
-    title: "Activa automatizaciones",
-    description: "Enciende los flujos que necesites y deja que la IA trabaje por ti.",
-    icon: <FaBolt className="w-8 h-8 text-yellow-600" />,
-    bg: "bg-yellow-50",
+    title: "Sincroniza datos",
+    description: "Integra cuadernos, sensores, estaciones meteo y compras para trazabilidad automática.",
+    icon: <FaSatelliteDish className="w-8 h-8 text-blue-700" />,
+    bg: "bg-blue-50",
+  },
+  {
+    title: "Activa inteligencia",
+    description: "La IA propone labores, genera reportes y comparte evidencias listas para auditorías.",
+    icon: <FaSeedling className="w-8 h-8 text-lime-600" />,
+    bg: "bg-lime-50",
   },
 ];
 
@@ -30,7 +30,7 @@ export default function HowItWorks() {
           Cómo funciona
         </h2>
         <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-          Conecta tus apps y activa automatizaciones con un solo clic.
+          Digitaliza la operación agrícola paso a paso y mantén a tu equipo alineado desde un único panel.
         </p>
 
         <div className="mt-20 relative">
