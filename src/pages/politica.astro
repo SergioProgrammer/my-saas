@@ -1,0 +1,171 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.jsx";
+
+const privacySections = [
+  {
+    id: "responsable",
+    title: "1. Responsable del tratamiento",
+    paragraphs: [
+      "Procesia Automation S.L., con domicilio en Sevilla y contacto en legal@procesia.com, es la responsable del tratamiento de los datos personales recabados a través de este sitio web y de la plataforma Procesia Agro.",
+      "Puede contactar con la persona delegada de protección de datos escribiendo al mismo correo con el asunto \"Protección de datos\".",
+    ],
+  },
+  {
+    id: "finalidades",
+    title: "2. Finalidades",
+    paragraphs: [
+      "Gestionar solicitudes comerciales, la activación de automatizaciones y la prestación del soporte técnico asociado.",
+      "Enviar comunicaciones sobre novedades del servicio siempre que exista base legitimadora o consentimiento.",
+      "Analizar el uso de la plataforma para mejorarla, empleando datos agregados y, cuando sea necesario, previo consentimiento.",
+    ],
+  },
+  {
+    id: "legitimacion",
+    title: "3. Legitimación",
+    paragraphs: [
+      "La ejecución de contratos o medidas precontractuales legitima los tratamientos necesarios para prestar los servicios solicitados.",
+      "El consentimiento expreso legitima los envíos comerciales y el uso de cookies analíticas o de marketing.",
+      "El interés legítimo de Procesia sostiene las labores de seguridad, mantenimiento y mejora esencial de la plataforma.",
+    ],
+  },
+  {
+    id: "cesiones",
+    title: "4. Cesiones y encargados",
+    paragraphs: [
+      "Los datos podrán comunicarse a proveedores tecnológicos ubicados en la Unión Europea o en países con garantías adecuadas, estrictamente para la prestación del servicio.",
+      "Procesia formaliza contratos de encargo de tratamiento y aplica cláusulas contractuales tipo cuando resultan necesarias.",
+    ],
+  },
+  {
+    id: "conservacion",
+    title: "5. Conservación",
+    paragraphs: [
+      "Los datos se conservan mientras se mantenga la relación contractual y, posteriormente, durante los plazos legales que apliquen.",
+      "Los datos tratados con fines comerciales se conservarán mientras exista interés mutuo o hasta que la persona interesada revoque el consentimiento.",
+    ],
+  },
+  {
+    id: "derechos",
+    title: "6. Derechos de las personas usuarias",
+    paragraphs: [
+      "Puede ejercitar los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad mediante correo electrónico a legal@procesia.com, identificándose correctamente.",
+      "Si considera que sus derechos no han sido atendidos, tiene derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es).",
+    ],
+  },
+];
+
+const cookieSections = [
+  {
+    id: "que-son",
+    title: "1. ¿Qué son las cookies?",
+    paragraphs: [
+      "Las cookies son archivos que se descargan en su dispositivo al acceder a determinadas páginas web y permiten almacenar y recuperar información acerca de la navegación realizada.",
+    ],
+  },
+  {
+    id: "tipologia",
+    title: "2. Tipología utilizada",
+    paragraphs: [
+      "Cookies esenciales propias: necesarias para ofrecer funcionalidades básicas como el inicio de sesión y la gestión de sesiones seguras.",
+      "Cookies analíticas: nos ayudan a conocer el uso de la plataforma y optimizarla. Solo se activan con su consentimiento.",
+      "Cookies de personalización y marketing: permiten adaptar contenidos y medir campañas, habilitadas únicamente si usted las acepta expresamente.",
+    ],
+  },
+  {
+    id: "gestion",
+    title: "3. Gestión de cookies",
+    paragraphs: [
+      "Puede configurar o revocar su consentimiento en cualquier momento desde el centro de preferencias disponible en esta página a través del botón \"Configurar cookies\".",
+      "También puede eliminar o bloquear cookies a través de la configuración de su navegador, siguiendo las instrucciones específicas de cada proveedor.",
+    ],
+  },
+  {
+    id: "plazos",
+    title: "4. Plazos de conservación",
+    paragraphs: [
+      "Las cookies de sesión expiran al cerrar el navegador. Las cookies persistentes se mantienen entre 1 y 12 meses, según su finalidad concreta.",
+    ],
+  },
+  {
+    id: "actualizaciones",
+    title: "5. Actualizaciones de la política",
+    paragraphs: [
+      "Procesia revisará periódicamente esta política para mantenerla actualizada. Cualquier cambio relevante se comunicará a través del sitio web y, cuando proceda, mediante notificación directa.",
+    ],
+  },
+];
+---
+<Layout>
+  <Navbar />
+  <main class="bg-white">
+    <section class="bg-[#f6f7f9]">
+      <div class="max-w-3xl mx-auto px-6 lg:px-8 py-24 space-y-16">
+        <header class="space-y-4 text-center">
+          <p class="text-sm font-semibold text-emerald-600 uppercase tracking-wide">
+            Protección de datos
+          </p>
+          <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">
+            Política de privacidad y cookies
+          </h1>
+          <p class="text-sm text-gray-500">
+            Última actualización: {new Date().toLocaleDateString("es-ES")}
+          </p>
+          <p class="text-gray-600">
+            En esta página encontrará información detallada sobre cómo Procesia trata sus datos personales y cómo utiliza las cookies para mejorar la experiencia de uso de la plataforma.
+          </p>
+        </header>
+
+        <section id="privacidad" class="bg-white border border-gray-200 rounded-3xl shadow-sm p-8 sm:p-12 space-y-10">
+          <div class="space-y-3">
+            <h2 class="text-2xl font-semibold text-gray-900">Política de privacidad</h2>
+            <p class="text-gray-600 text-sm sm:text-base">
+              Esta política describe cómo recogemos, utilizamos y protegemos los datos personales cuando interactúa con Procesia.
+            </p>
+          </div>
+          <div class="space-y-8">
+            {privacySections.map((section) => (
+              <article id={section.id} class="space-y-3">
+                <h3 class="text-xl font-semibold text-gray-900">{section.title}</h3>
+                {section.paragraphs.map((paragraph) => (
+                  <p class="text-sm sm:text-base leading-relaxed text-gray-600">
+                    {paragraph}
+                  </p>
+                ))}
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="cookies" class="bg-white border border-gray-200 rounded-3xl shadow-sm p-8 sm:p-12 space-y-10">
+          <div class="space-y-3">
+            <h2 class="text-2xl font-semibold text-gray-900">Política de cookies</h2>
+            <p class="text-gray-600 text-sm sm:text-base">
+              Explicamos qué tipos de cookies utilizamos, con qué finalidad y cómo puede administrar sus preferencias en cualquier momento.
+            </p>
+          </div>
+          <div class="space-y-8">
+            {cookieSections.map((section) => (
+              <article id={section.id} class="space-y-3">
+                <h3 class="text-xl font-semibold text-gray-900">{section.title}</h3>
+                {section.paragraphs.map((paragraph) => (
+                  <p class="text-sm sm:text-base leading-relaxed text-gray-600">
+                    {paragraph}
+                  </p>
+                ))}
+              </article>
+            ))}
+          </div>
+          <div class="rounded-2xl bg-gray-50 border border-dashed border-gray-300 p-6 text-sm text-gray-600">
+            <p>
+              Puede revisar o actualizar su consentimiento en cualquier momento pulsando el botón
+              <span class="font-semibold text-gray-900">"Configurar cookies"</span> disponible al pie de cada página.
+            </p>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <Footer client:load />
+</Layout>

@@ -40,9 +40,9 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold text-gray-900">Legal</h3>
             <ul className="mt-4 space-y-2 text-gray-600 text-sm">
-              <li><a href="#" className="hover:text-gray-900">Términos y condiciones</a></li>
-              <li><a href="#" className="hover:text-gray-900">Política de privacidad</a></li>
-              <li><a href="#" className="hover:text-gray-900">Cookies</a></li>
+              <li><a href="/terminos" className="hover:text-gray-900">Términos y condiciones</a></li>
+              <li><a href="/politica#privacidad" className="hover:text-gray-900">Política de privacidad</a></li>
+              <li><a href="/politica#cookies" className="hover:text-gray-900">Cookies</a></li>
             </ul>
           </div>
         </div>

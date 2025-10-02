@@ -1,0 +1,99 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.jsx";
+
+const sections = [
+  {
+    id: "objeto-y-titularidad",
+    title: "1. Objeto y titularidad",
+    paragraphs: [
+      "Procesia Automation S.L. (\"Procesia\") es la titular de la plataforma y responsable de los servicios descritos en este sitio web.",
+      "El acceso y uso de la web implica la aceptación íntegra de estos Términos y Condiciones por parte de la persona usuaria.",
+    ],
+  },
+  {
+    id: "uso-de-la-plataforma",
+    title: "2. Uso de la plataforma",
+    paragraphs: [
+      "La persona usuaria se compromete a utilizar la web de forma diligente, lícita y conforme a las instrucciones de Procesia.",
+      "Queda prohibido introducir contenidos que puedan vulnerar derechos de terceros, provocar daños en los sistemas o entorpecer el correcto funcionamiento del servicio.",
+    ],
+  },
+  {
+    id: "contratacion-y-soporte",
+    title: "3. Contratación y soporte",
+    paragraphs: [
+      "Las automatizaciones se activan previa aceptación de la propuesta comercial o plan correspondiente y podrán incluir fases de implantación supervisada.",
+      "Procesia ofrecerá soporte técnico y agronómico en los términos pactados con cada cliente, reservándose el derecho a modificar o interrumpir servicios no contratados.",
+    ],
+  },
+  {
+    id: "propiedad-intelectual",
+    title: "4. Propiedad intelectual",
+    paragraphs: [
+      "Todos los derechos de propiedad intelectual e industrial sobre la plataforma, diseños, logotipos y contenidos pertenecen a Procesia o a sus licenciantes.",
+      "La concesión de acceso no supone cesión de ninguno de estos derechos y queda estrictamente limitada a la utilización necesaria para la prestación del servicio.",
+    ],
+  },
+  {
+    id: "limitacion-de-responsabilidad",
+    title: "5. Limitación de responsabilidad",
+    paragraphs: [
+      "Procesia no responderá por interrupciones motivadas por causas de fuerza mayor, incidencias en redes de comunicación o por usos contrarios a las instrucciones facilitadas.",
+      "Las decisiones agronómicas y operativas adoptadas a partir de la información generada por la plataforma corresponden al cliente y a su equipo técnico.",
+    ],
+  },
+  {
+    id: "ley-aplicable",
+    title: "6. Ley aplicable y jurisdicción",
+    paragraphs: [
+      "Los presentes Términos se rigen por la legislación española. Cualquier controversia se someterá a los juzgados y tribunales competentes de Sevilla, salvo normativa imperativa en contrario.",
+    ],
+  },
+];
+---
+<Layout>
+  <Navbar />
+  <main class="bg-[#faf9f6]">
+    <section class="max-w-3xl mx-auto px-6 lg:px-8 py-24 space-y-12">
+      <header class="space-y-4">
+        <p class="text-sm font-semibold text-emerald-600 uppercase tracking-wide">
+          Información legal
+        </p>
+        <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">
+          Términos y condiciones de uso
+        </h1>
+        <p class="text-sm text-gray-500">
+          Última actualización: {new Date().toLocaleDateString("es-ES")}
+        </p>
+        <p class="text-gray-600">
+          Estas condiciones regulan el acceso y la utilización de la plataforma Procesia
+          Agro por parte de las personas usuarias y clientes. Le recomendamos leerlas con
+          atención antes de continuar navegando o contratar cualquier servicio.
+        </p>
+      </header>
+
+      <div class="space-y-12 bg-white border border-gray-200 rounded-3xl shadow-sm p-8 sm:p-12">
+        {sections.map((section) => (
+          <article id={section.id} class="space-y-4">
+            <h2 class="text-xl font-semibold text-gray-900">{section.title}</h2>
+            {section.paragraphs.map((paragraph) => (
+              <p class="text-sm sm:text-base leading-relaxed text-gray-600">
+                {paragraph}
+              </p>
+            ))}
+          </article>
+        ))}
+      </div>
+
+      <footer class="text-sm text-gray-500 bg-white/60 border border-gray-200 rounded-2xl p-6">
+        <p>
+          Si tiene alguna duda sobre estos términos puede contactar con nosotros en
+          <a href="mailto:legal@procesia.com" class="text-emerald-600 hover:text-emerald-700 font-medium">legal@procesia.com</a>.
+        </p>
+      </footer>
+    </section>
+  </main>
+  <Footer client:load />
+</Layout>
