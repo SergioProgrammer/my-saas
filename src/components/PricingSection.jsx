@@ -7,7 +7,7 @@ import { FaSeedling, FaTractor, FaWarehouse } from "react-icons/fa";
 const plans = [
   {
     title: "Piloto de trazabilidad",
-    price: "14 días sin coste",
+    price: "7 días sin coste",
     description:
       "Digitaliza una explotación completa, importa tu cuaderno y valida la automatización con nuestro equipo agrónomo.",
     features: [
@@ -22,7 +22,7 @@ const plans = [
   },
   {
     title: "Operación multicuartel",
-    price: "Desde 89 €/mes",
+    price: "",
     description:
       "Activa automatizaciones de trazabilidad, riego y stock para varias parcelas con reporte semanal.",
     features: [
