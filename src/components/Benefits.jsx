@@ -23,24 +23,46 @@ export default function Benefits() {
         </p>
       </div>
 
-      {/* GRID full-bleed */}
-      <div className="mt-8">
+      {/* Carrusel mobile */}
+      <div className="mt-10 md:hidden px-6">
+        <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4" role="region" aria-label="Beneficios destacables">
+          {benefits.map((b, index) => (
+            <motion.div
+              key={`benefit-mobile-${index}`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
+              className="snap-center shrink-0 min-w-[82%] max-w-[82%] bg-white/80 backdrop-blur rounded-3xl border border-gray-100 shadow-sm px-8 py-10 text-center"
+            >
+              <div className="w-16 h-16 mx-auto flex items-center justify-center rounded-2xl bg-white/90 shadow mb-5">
+                {b.icon}
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900">{b.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-gray-600">{b.description}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* GRID full-bleed desktop */}
+      <div className="hidden md:block mt-16">
         <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-0">
             {benefits.map((b, index) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.98 }}
-                whileInView={{ opacity: 1, scale: 1.1 }}
-                transition={{ duration: 0.5, delay: index * 0.05, ease: "easeOut" }}
+                key={`benefit-desktop-${index}`}
+                initial={{ opacity: 0, scale: 0.96 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.08, ease: "easeOut" }}
                 viewport={{ once: true }}
-                className="aspect-square flex flex-col items-center justify-center text-center select-none"
+                className="aspect-square flex flex-col items-center justify-center text-center px-10"
               >
-                <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-white/0  mb-4">
+                <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-white/90 shadow mb-5">
                   {b.icon}
                 </div>
-                <h3 className="text-lg md:text-xl font-semibold text-gray-900">{b.title}</h3>
-                <p className="mt-2 text-gray-700/80 text-sm md:text-base max-w-xs px-6">{b.description}</p>
+                <h3 className="text-xl font-semibold text-gray-900">{b.title}</h3>
+                <p className="mt-3 text-base leading-relaxed text-gray-600">{b.description}</p>
               </motion.div>
             ))}
           </div>
