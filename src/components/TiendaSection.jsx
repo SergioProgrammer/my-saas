@@ -8,14 +8,10 @@ import {
   Search,
   CreditCard,
   FileSpreadsheet,
-  Sprout,
   Boxes,
-  QrCode,
-  Thermometer,
   ShieldCheck,
-  Droplet,
-  FlaskConical,
   Gauge,
+  ClipboardCheck,
 } from 'lucide-react'
 
 export default function TiendaSection() {
@@ -24,182 +20,126 @@ export default function TiendaSection() {
   const groups = useMemo(
     () => [
       {
-        id: 'campo',
-        title: 'Operación en campo',
+        id: 'estrategia',
+        title: 'Estrategia y gobierno',
         highlight: true,
         tagline:
-          'Coordina personal, maquinaria e insumos con flujos listos para el equipo agrónomo.',
+          'Definimos hoja de ruta, modelo operativo y business case para automatizar con tracción ejecutiva.',
         items: [
           {
-            id: 'control-turnos-campo',
-            name: 'Control de turnos en campo',
+            id: 'roadmap-automatizacion',
+            name: 'Roadmap de automatización corporativa',
             description:
-              'Planifica cuadrillas, sincroniza labores por parcela y registra avances desde móvil o tablet.',
+              'Assessment 360°, business case y backlog priorizado listos para presentar a dirección.',
             icon: Workflow,
-            accentBg: 'bg-lime-100',
-            accentIcon: 'text-lime-700',
+            accentBg: 'bg-indigo-100',
+            accentIcon: 'text-indigo-700',
             href: '/automatizaciones/control-turnos-campo',
-            badges: ['Incluye checklists móviles'],
+            badges: ['Assessment 360°', 'Business case ejecutivo'],
           },
           {
-            id: 'stock-insumos-agro',
-            name: 'Stock inteligente de insumos',
+            id: 'oficina-automatizacion',
+            name: 'Oficina de automatización (PMO)',
             description:
-              'Controla semillas, fertilizantes y fitosanitarios con lotes, alertas de carencia y reposición automática.',
-            icon: Boxes,
+              'Gobernanza, portfolio y ritos de seguimiento para ejecutar automatizaciones de forma sostenible.',
+            icon: Gauge,
+            accentBg: 'bg-blue-100',
+            accentIcon: 'text-blue-700',
+            href: 'https://wa.me/34655689827',
+            badges: ['Portfolio board', 'Gestión del cambio'],
+          },
+          {
+            id: 'gobierno-datos',
+            name: 'Gobierno de datos orientado a procesos',
+            description:
+              'Diseñamos modelos de datos, indicadores y accountability para impulsar decisiones basadas en evidencia.',
+            icon: BarChart,
             accentBg: 'bg-emerald-100',
             accentIcon: 'text-emerald-700',
-            href: '/automatizaciones/stock-insumos-agro',
-            badges: ['Lectura por código de barras'],
+            href: 'https://wa.me/34655689827',
+            badges: ['Data governance', 'KPIs operativos'],
           },
+        ],
+      },
+      {
+        id: 'operaciones',
+        title: 'Operaciones y supply chain',
+        highlight: false,
+        tagline: 'Optimizamos flujos críticos y conectamos negocio, logística y finanzas en una misma capa.',
+        items: [
           {
-            id: 'pedidos-proveedores-agro',
-            name: 'Pedidos automatizados a proveedores',
+            id: 'procure-to-pay',
+            name: 'Procure-to-pay automatizado',
             description:
-              'Genera pedidos cuando el stock baja de mínimos y envía confirmaciones automáticas por email o WhatsApp.',
+              'Automatizamos requisición, aprobación y compra con trazabilidad y control financiero en tiempo real.',
             icon: CreditCard,
             accentBg: 'bg-teal-100',
             accentIcon: 'text-teal-700',
             href: '/automatizaciones/pedidos-proveedores-agro',
-            badges: ['Aprobaciones multi-nivel'],
+            badges: ['Aprobaciones inteligentes', 'Integración ERP'],
           },
           {
-            id: 'albaranes-campo',
-            name: 'Albaranes digitales de campo',
+            id: 'inventarios-criticos',
+            name: 'Gobierno de inventarios críticos',
             description:
-              'Digitaliza entradas y salidas con OCR entrenado para cooperativas agrícolas y firma desde el móvil.',
-            icon: FileSpreadsheet,
-            accentBg: 'bg-green-100',
-            accentIcon: 'text-green-600',
-            href: '/automatizaciones/albaranes-campo',
-            badges: ['Integración con ERP agrario'],
-          },
-          {
-            id: 'tratamientos-fitosanitarios',
-            name: 'Tratamientos fitosanitarios asistidos',
-            description:
-              'Programa, registra y notifica tratamientos por parcela con alertas de seguridad y trazabilidad completa.',
-            icon: Sprout,
-            accentBg: 'bg-lime-200',
-            accentIcon: 'text-lime-700',
-            href: '/automatizaciones/tratamientos-fitosanitarios',
-            badges: ['Carencias y límites MRL automáticos'],
-          },
-        ],
-      },
-      {
-        id: 'postcosecha',
-        title: 'Postcosecha y comercialización',
-        highlight: false,
-        tagline: 'Une almacenes, certificaciones y logística para mantener la trazabilidad hasta el cliente.',
-        items: [
-          {
-            id: 'recepcion-almacen',
-            name: 'Recepción inteligente en almacén',
-            description: 'Registra lotes, calibres y temperaturas al descargar camiones con evidencias fotográficas automáticas.',
+              'Modelos de cobertura, alertas predictivas y reporting unificado para tomar decisiones de reaprovisionamiento.',
             icon: Boxes,
-            accentBg: 'bg-orange-100',
-            accentIcon: 'text-orange-700',
-            href: 'https://cal.com/procesia/postcosecha',
-            badges: ['Sensores bluetooth + QR'],
-          },
-          {
-            id: 'calidad-lote',
-            name: 'Control de calidad por lote',
-            description: 'Genera fichas de calidad, analiza calibres y comparte incidencias con tu cadena comercial.',
-            icon: Gauge,
             accentBg: 'bg-amber-100',
             accentIcon: 'text-amber-700',
-            href: 'https://cal.com/procesia/postcosecha',
-            badges: ['Dashboards en tiempo real'],
+            href: '/automatizaciones/stock-insumos-agro',
+            badges: ['Cobertura dinámica', 'Alertas predictivas'],
           },
           {
-            id: 'etiquetas-qr',
-            name: 'Etiquetas QR de trazabilidad',
-            description: 'Imprime etiquetas por lote con QR dinámico para clientes, certificadoras y consumo responsable.',
-            icon: QrCode,
-            accentBg: 'bg-indigo-100',
-            accentIcon: 'text-indigo-600',
-            href: 'https://cal.com/procesia/postcosecha',
-            badges: ['Compatible GS1 / EAN'],
-          },
-          {
-            id: 'logistica-frio',
-            name: 'Logística de frío monitorizada',
-            description: 'Conecta sondas de temperatura y GPS para avisar de desviaciones durante el transporte.',
-            icon: Thermometer,
-            accentBg: 'bg-sky-100',
-            accentIcon: 'text-sky-600',
-            href: 'https://cal.com/procesia/postcosecha',
-            badges: ['Alertas en minutos'],
-          },
-          {
-            id: 'conciliacion-ventas',
-            name: 'Conciliación con comercializadoras',
-            description: 'Cruza kilos vendidos vs. kilos cosechados y estima liquidaciones por productor automáticamente.',
-            icon: BarChart,
-            accentBg: 'bg-teal-100',
-            accentIcon: 'text-teal-700',
-            href: 'https://cal.com/procesia/postcosecha',
-            badges: ['Exportación a Excel y Power BI'],
-          },
-        ],
-      },
-      {
-        id: 'sostenibilidad',
-        title: 'Sostenibilidad y reporting',
-        highlight: false,
-        tagline: 'Comparte el impacto real de tu producción con clientes, certificadoras y entidades financieras.',
-        items: [
-          {
-            id: 'huella-hidrica',
-            name: 'Huella hídrica y energética',
-            description: 'Calcula consumos por cultivo, superficie y campaña usando datos de riego y maquinaria.',
-            icon: Droplet,
-            accentBg: 'bg-blue-100',
-            accentIcon: 'text-blue-600',
-            href: 'https://cal.com/procesia/sostenibilidad',
-            badges: ['KPIs actualizados diariamente'],
-          },
-          {
-            id: 'reportes-esg',
-            name: 'Reportes ESG agroexportación',
-            description: 'Genera entregables para supermercados y bancos con indicadores de sostenibilidad verificados.',
+            id: 'captura-documental',
+            name: 'Captura inteligente de documentación',
+            description:
+              'Digitalizamos contratos, albaranes y formularios con validaciones automáticas y envío a tus sistemas.',
             icon: FileSpreadsheet,
             accentBg: 'bg-purple-100',
             accentIcon: 'text-purple-600',
-            href: 'https://cal.com/procesia/sostenibilidad',
-            badges: ['Plantillas Global Reporting'],
+            href: '/automatizaciones/albaranes-campo',
+            badges: ['Reconocimiento automático', 'Integración documental'],
           },
+        ],
+      },
+      {
+        id: 'compliance',
+        title: 'Riesgo y compliance',
+        highlight: false,
+        tagline: 'Automatiza controles, evidencias y reporting regulatorio en cada proceso clave.',
+        items: [
           {
-            id: 'alertas-normativas',
-            name: 'Alertas normativas fitosanitarias',
-            description: 'Recibe avisos cuando un producto quede restringido o cambien los límites de residuos.',
+            id: 'compliance-operativo',
+            name: 'Compliance automatizado',
+            description:
+              'Diseñamos matrices de riesgo, controles y alertas para asegurar cumplimiento continuo.',
             icon: ShieldCheck,
             accentBg: 'bg-rose-100',
             accentIcon: 'text-rose-600',
-            href: 'https://cal.com/procesia/sostenibilidad',
-            badges: ['Base de datos actualizada semanalmente'],
+            href: '/automatizaciones/tratamientos-fitosanitarios',
+            badges: ['Matriz de riesgos', 'Alertas regulatorias'],
           },
           {
-            id: 'portal-certificadoras',
-            name: 'Portal para certificadoras',
-            description: 'Comparte evidencias, registros y planes de acción con auditores externos sin correos interminables.',
-            icon: Zap,
+            id: 'auditoria-continua',
+            name: 'Auditoría continua y SLA',
+            description:
+              'Automatizamos captura de evidencias, seguimiento de SLA y reportes ejecutivos para auditoría.',
+            icon: ClipboardCheck,
+            accentBg: 'bg-slate-100',
+            accentIcon: 'text-slate-700',
+            href: 'https://wa.me/34655689827',
+            badges: ['Evidencia automática', 'Paneles de SLA'],
+          },
+          {
+            id: 'reporting-impacto',
+            name: 'Reporting de impacto y ESG',
+            description:
+              'Centralizamos indicadores, certificaciones y planes de acción para clientes y reguladores.',
+            icon: BarChart,
             accentBg: 'bg-gray-100',
             accentIcon: 'text-gray-700',
-            href: 'https://cal.com/procesia/sostenibilidad',
-            badges: ['Control de permisos granulares'],
-          },
-          {
-            id: 'parcelas-experimentales',
-            name: 'I+D en parcelas experimentales',
-            description: 'Automatiza ensayos de variedades con captura de datos y seguimiento visual en un mismo dashboard.',
-            icon: FlaskConical,
-            accentBg: 'bg-green-100',
-            accentIcon: 'text-green-700',
-            href: 'https://cal.com/procesia/sostenibilidad',
-            badges: ['Integración con cuaderno digital'],
+            href: 'https://wa.me/34655689827',
+            badges: ['KPIs ESG', 'Planes de acción'],
           },
         ],
       },
@@ -234,7 +174,7 @@ export default function TiendaSection() {
 
   const hasMatches = filteredGroups.length > 0
   const groupsToRender = hasMatches ? filteredGroups : groups
-  const registerUrl = 'https://app-procesia.vercel.app/registro'
+  const registerUrl = 'https://wa.me/34655689827'
 
   const AutomationCard = ({ automation, primaryLabel, primaryHref, className }) => {
     const Icon = automation.icon
@@ -268,7 +208,7 @@ export default function TiendaSection() {
             href={primaryHref ?? registerUrl}
             className="inline-flex items-center justify-center gap-2 rounded-xl bg-black text-white px-4 py-2.5 text-sm font-medium shadow hover:opacity-90 transition"
           >
-            <Zap className="h-4 w-4" /> {primaryLabel ?? 'Regístrate para empezar'}
+            <Zap className="h-4 w-4" /> {primaryLabel ?? 'Agendar sesión'}
           </a>
 
           <a
@@ -288,10 +228,10 @@ export default function TiendaSection() {
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
           <div>
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
-              Tienda de Automatizaciones Agrícolas
+              Catálogo de servicios estratégicos
             </h2>
             <p className="text-gray-600 mt-1">
-              Descubre plantillas para digitalizar campañas, postcosecha y reporting sostenible en minutos.
+              Descubre módulos de consultoría y automatización adaptados a los retos de tu organización.
             </p>
           </div>
 
@@ -300,7 +240,7 @@ export default function TiendaSection() {
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Buscar automatizaciones..."
+              placeholder="Buscar servicios..."
               className="w-full rounded-xl border bg-white py-2.5 pl-10 pr-3 text-sm outline-none focus:ring-2 focus:ring-black/10"
             />
           </div>
@@ -308,7 +248,7 @@ export default function TiendaSection() {
 
         {!hasMatches && query && (
           <div className="bg-white border border-dashed border-gray-200 text-center py-10 rounded-3xl text-gray-500">
-            No encontramos automatizaciones con “{query}”. Prueba con otro término o explora los grupos disponibles.
+            No encontramos servicios con “{query}”. Prueba con otro término o explora las categorías disponibles.
           </div>
         )}
 
@@ -327,7 +267,7 @@ export default function TiendaSection() {
                   <div className="flex items-center gap-3">
                     {group.highlight && (
                       <span className="inline-flex items-center rounded-full bg-lime-100 text-lime-700 px-3 py-1 text-xs font-semibold uppercase tracking-wide">
-                        Foco Agrónomo
+                        Foco estratégico
                       </span>
                     )}
                     <h3 className="text-xl font-semibold text-gray-900">{group.title}</h3>
@@ -343,7 +283,7 @@ export default function TiendaSection() {
                   href={registerUrl}
                   className="hidden sm:inline-flex items-center gap-2 rounded-xl bg-black text-white px-4 py-2.5 text-sm font-medium shadow hover:opacity-90 transition"
                 >
-                  <Zap className="h-4 w-4" /> Hablar con un agrónomo
+                  <Zap className="h-4 w-4" /> Hablar con dirección de proyecto
                 </a>
               </div>
 
@@ -358,7 +298,7 @@ export default function TiendaSection() {
                   <div key={item.id} className="snap-center shrink-0 min-w-[85%]">
                     <AutomationCard
                       automation={item}
-                      primaryLabel="Ver más"
+                      primaryLabel="Explorar servicio"
                       primaryHref={item.href}
                     />
                   </div>

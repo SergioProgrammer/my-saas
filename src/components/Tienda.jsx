@@ -1,93 +1,99 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { Zap, ClipboardList, Droplet, Satellite, Boxes, ShieldCheck, Tractor, Sprout } from 'lucide-react'
+import { Zap, Workflow, Search, CreditCard, Boxes, ShieldCheck, Gauge, BarChart } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const automations = [
   {
-    id: 'cuaderno-digital',
-    name: 'Cuaderno de campo con IA',
-    description: 'Registra labores, evidencias y recetas por parcela y exporta a SIEX en un clic.',
-    icon: ClipboardList,
+    id: 'roadmap-automatizacion',
+    name: 'Roadmap de automatización corporativa',
+    description: 'Evaluamos tu madurez operativa, priorizamos iniciativas y construimos el business case ejecutivo.',
+    icon: Workflow,
+    accentBg: 'bg-indigo-100',
+    accentIcon: 'text-indigo-700',
+    highlights: [
+      'Assessment de capacidades y pain points',
+      'Priorización de quick wins y proyectos estructurales',
+      'Modelo de gobernanza y tablero de seguimiento',
+    ],
+    impact: 'Patrocinio ejecutivo alineado con un plan de automatización accionable.',
+    href: '/automatizaciones/control-turnos-campo',
+  },
+  {
+    id: 'procesos-core',
+    name: 'Rediseño de procesos core end-to-end',
+    description: 'Mapeamos journeys críticos junto a tus equipos y eliminamos fricciones antes de automatizar.',
+    icon: Search,
     accentBg: 'bg-emerald-100',
     accentIcon: 'text-emerald-700',
     highlights: [
-      'Registra labores con voz, fotos y geoubicación',
-      'Genera recetas y reportes compatibles con SIEX',
-      'Comparte evidencias con agrónomos y auditorías',
+      'Workshops inter-área y blueprint de procesos',
+      'Identificación de riesgos y controles clave',
+      'Backlog de automatización listo para desarrollo',
     ],
-    impact: 'Seguimiento integral sin hojas de cálculo ni papeles.',
+    impact: 'Procesos simplificados y listos para automatización sin sobresaltos.',
+    href: '/automatizaciones/albaranes-campo',
   },
   {
-    id: 'riego-precision',
-    name: 'Riego de precisión',
-    description: 'Combina sondas de humedad, clima y programación automática para optimizar riegos.',
-    icon: Droplet,
-    accentBg: 'bg-sky-100',
-    accentIcon: 'text-sky-600',
+    id: 'procure-to-pay',
+    name: 'Procure-to-pay automatizado',
+    description: 'Conectamos compras, finanzas y operaciones con un flujo automático de punta a punta.',
+    icon: CreditCard,
+    accentBg: 'bg-teal-100',
+    accentIcon: 'text-teal-700',
     highlights: [
-      'Unifica sondas, clima y válvulas en un panel',
-      'Configura programas dinámicos por bloque y cultivo',
-      'Recibe alertas predictivas de estrés hídrico',
+      'Reglas de reaprovisionamiento y aprobaciones multiescala',
+      'Integraciones con ERP y proveedores',
+      'Monitoreo de SLA y KPIs financieros',
     ],
-    impact: 'Cada turno de riego ajustado sin revisar sensores manualmente.',
+    impact: 'Ciclos de compra más cortos y controlados con trazabilidad absoluta.',
+    href: '/automatizaciones/pedidos-proveedores-agro',
   },
   {
-    id: 'planificador-labores',
-    name: 'Planificador de labores y maquinaria',
-    description: 'Asigna tareas por cuadrilla, controla maquinaria y genera partes automáticamente.',
-    icon: Tractor,
-    accentBg: 'bg-lime-100',
-    accentIcon: 'text-lime-700',
-    highlights: [
-      'Planifica jornadas completas por parcela y cuadrilla',
-      'Sincroniza disponibilidad de maquinaria y operarios',
-      'Genera partes y checklists listos para firmar',
-    ],
-    impact: 'Coordina equipos sin llamadas ni cadenas de WhatsApp.',
-  },
-  {
-    id: 'trazabilidad-lotes',
-    name: 'Trazabilidad de lotes',
-    description: 'Sincroniza cosecha, almacenes y distribución con etiquetas y QR para auditorías.',
+    id: 'inventarios-criticos',
+    name: 'Gobierno de inventarios críticos',
+    description: 'Unificamos la visión de inventario, demanda y riesgos para tomar decisiones dinámicas.',
     icon: Boxes,
     accentBg: 'bg-amber-100',
     accentIcon: 'text-amber-700',
     highlights: [
-      'Etiqueta cada lote con QR y estados en tiempo real',
-      'Conecta cosecha, almacén y distribución automáticamente',
-      'Entrega reportes exportables para certificaciones',
+      'Modelos de cobertura y señal de reposición',
+      'Alertas predictivas de consumo y caducidad',
+      'Conectores con herramientas de supply chain',
     ],
-    impact: 'Auditorías en minutos con historial verificable.',
+    impact: 'Inventario saludable y decisiones basadas en datos en tiempo real.',
+    href: '/automatizaciones/stock-insumos-agro',
   },
   {
-    id: 'monitoreo-satelital',
-    name: 'Monitoreo satelital y NDVI',
-    description: 'Automatiza alertas según vigor, estrés hídrico y pronósticos climáticos.',
-    icon: Satellite,
-    accentBg: 'bg-indigo-100',
-    accentIcon: 'text-indigo-600',
-    highlights: [
-      'Recibe mapas de vigor y NDVI actualizados cada 48h',
-      'Superpone pronósticos y capas meteorológicas clave',
-      'Crea alertas automáticas por zonas de estrés',
-    ],
-    impact: 'Decisiones con semanas de anticipación en cada parcela.',
-  },
-  {
-    id: 'cumplimiento-fitosanitario',
-    name: 'Cumplimiento fitosanitario',
-    description: 'Controla stock de insumos, recetas y carencias con avisos al instante.',
+    id: 'compliance-operativo',
+    name: 'Compliance automatizado y auditoría continua',
+    description: 'Diseñamos controles y reportes automáticos para mitigar riesgos regulatorios y operativos.',
     icon: ShieldCheck,
     accentBg: 'bg-rose-100',
     accentIcon: 'text-rose-600',
     highlights: [
-      'Controla stock, caducidad y consumos en bodega',
-      'Bloquea aplicaciones que no cumplen carencias',
-      'Documenta tratamientos con firmas y evidencias',
+      'Matriz de riesgos y controles priorizados',
+      'Automatización de evidencias y trazabilidad',
+      'Dashboards regulatorios y alertas en vivo',
     ],
-    impact: 'Inspecciones sin sorpresas ni sanciones.',
+    impact: 'Cumplimiento proactivo y auditorías con información lista en segundos.',
+    href: '/automatizaciones/tratamientos-fitosanitarios',
+  },
+  {
+    id: 'oficina-automatizacion',
+    name: 'Oficina de automatización (PMO)',
+    description: 'Escalamos tu programa con gobierno, talento y métricas para cada sprint de automatización.',
+    icon: Gauge,
+    accentBg: 'bg-blue-100',
+    accentIcon: 'text-blue-700',
+    highlights: [
+      'Rituales de seguimiento y portfolio management',
+      'Playbooks de adopción y change management',
+      'Training para equipos internos y partners',
+    ],
+    impact: 'Automatización sostenible con capacidades internas fortalecidas.',
+    href: 'https://wa.me/34655689827',
   },
 ]
 
@@ -125,11 +131,11 @@ export default function Tienda() {
     <section className="bg-[#faf9f6] py-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 break-words">
-          Tienda de automatizaciones agronómicas
+          Portafolio de servicios estratégicos
         </h2>
         <p className="mt-6 text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
-          Elige flujos listos para desplegar con tu equipo técnico. Cada automatización incluye
-          implantación guiada, seguimiento y soporte del equipo Procesia.
+          Selecciona módulos de consultoría y automatización listos para desplegar con tus equipos.
+          Cada servicio incluye discovery, implantación guiada y acompañamiento continuo del equipo ProcesIA.
         </p>
 
         {/* Grid en desktop */}
@@ -166,14 +172,14 @@ export default function Tienda() {
 
               <div className="mt-6 flex flex-col gap-4 text-left">
                 <div className="flex items-start gap-2 text-sm font-semibold text-gray-900">
-                  <Sprout className="h-4 w-4 text-emerald-500 mt-0.5" />
+                  <BarChart className="h-4 w-4 text-emerald-500 mt-0.5" />
                   <span>{a.impact}</span>
                 </div>
                 <a
-                  href="https://app-procesia.vercel.app/registro"
+                  href={a.href ?? 'https://wa.me/34655689827'}
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-black text-white px-4 py-2 text-sm font-medium shadow hover:opacity-90 transition"
                 >
-                  <Zap className="h-4 w-4" /> Descubrir flujo
+                  <Zap className="h-4 w-4" /> Coordinar sesión
                 </a>
               </div>
             </motion.div>
@@ -214,14 +220,14 @@ export default function Tienda() {
 
                 <div className="mt-6 flex flex-col gap-4">
                   <div className="flex items-start gap-2 text-sm font-semibold text-gray-900">
-                    <Sprout className="h-4 w-4 text-emerald-500 mt-0.5" />
+                    <BarChart className="h-4 w-4 text-emerald-500 mt-0.5" />
                     <span>{a.impact}</span>
                   </div>
                   <a
-                    href="https://app-procesia.vercel.app/registro"
+                    href={a.href ?? 'https://wa.me/34655689827'}
                     className="inline-flex items-center justify-center gap-2 rounded-xl bg-black text-white px-4 py-2 text-sm font-medium shadow hover:opacity-90 transition"
                   >
-                    <Zap className="h-4 w-4" /> Descubrir flujo
+                    <Zap className="h-4 w-4" /> Coordinar sesión
                   </a>
                 </div>
               </div>
@@ -249,7 +255,7 @@ export default function Tienda() {
             href="/tienda"
             className="inline-block bg-black text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition"
           >
-            Ver más automatizaciones →
+            Ver todos los servicios →
           </a>
         </div>
       </div>

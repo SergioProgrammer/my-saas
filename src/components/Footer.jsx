@@ -8,9 +8,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Columna 1: Marca */}
           <div>
-            <h2 className="text-2xl font-bold text-gray-900">ProcesIA Agro</h2>
+            <h2 className="text-2xl font-bold text-gray-900">ProcesIA Consulting</h2>
             <p className="mt-4 text-gray-600 text-sm">
-              Impulsa la trazabilidad agrícola conectando cuadernos, sensores y equipos con automatizaciones guiadas por IA.
+              Acompañamos a direcciones de operaciones, transformación y TI a definir, priorizar y ejecutar automatizaciones de alto impacto en toda la organización.
             </p>
           </div>
 
@@ -18,10 +18,10 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold text-gray-900">Soluciones</h3>
             <ul className="mt-4 space-y-2 text-gray-600 text-sm">
-              <li><a href="/tienda" className="hover:text-gray-900">Cuaderno digital + IA</a></li>
-              <li><a href="/tienda" className="hover:text-gray-900">Riego y clima conectado</a></li>
-              <li><a href="/tienda" className="hover:text-gray-900">Gestión de insumos</a></li>
-              <li><a href="/demo" className="hover:text-gray-900">Recorrido guiado</a></li>
+              <li><a href="/tienda" className="hover:text-gray-900">Hoja de ruta de automatización</a></li>
+              <li><a href="/tienda" className="hover:text-gray-900">Rediseño de procesos end-to-end</a></li>
+              <li><a href="/tienda" className="hover:text-gray-900">Oficina de automatización (PMO)</a></li>
+              <li><a href="/tienda" className="hover:text-gray-900">Acompañamiento de adopción</a></li>
             </ul>
           </div>
 
@@ -29,10 +29,10 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold text-gray-900">Recursos</h3>
             <ul className="mt-4 space-y-2 text-gray-600 text-sm">
-              <li><a href="#" className="hover:text-gray-900">Guía SIEX y GlobalG.A.P.</a></li>
-              <li><a href="#" className="hover:text-gray-900">Casos de éxito</a></li>
-              <li><a href="#" className="hover:text-gray-900">Academia ProcesIA</a></li>
-              <li><a href="https://cal.com/procesia/agro" className="hover:text-gray-900">Contacto</a></li>
+              <li><a href="#" className="hover:text-gray-900">Guía de madurez operativa</a></li>
+              <li><a href="#" className="hover:text-gray-900">Casos de impacto</a></li>
+              <li><a href="#" className="hover:text-gray-900">Toolkit de automatización</a></li>
+              <li><a href="https://wa.me/34655689827" className="hover:text-gray-900">Agendar diagnóstico</a></li>
             </ul>
           </div>
 
@@ -51,7 +51,7 @@ export default function Footer() {
         <div className="border-t border-gray-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           {/* Derechos */}
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} ProcesIA Agro. Todos los derechos reservados.
+            © {new Date().getFullYear()} ProcesIA Consulting. Todos los derechos reservados.
           </p>
 
           {/* Redes sociales */}

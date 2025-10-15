@@ -1,36 +1,36 @@
-import { FaTractor, FaSatelliteDish, FaSeedling } from "react-icons/fa";
+import { FaSearch, FaProjectDiagram, FaRocket } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const steps = [
   {
-    title: "Configura tu explotación",
-    description: "Importa parcelas, lotes y plan de cultivos para crear el gemelo digital del campo.",
-    icon: <FaTractor className="w-8 h-8 text-green-700" />,
-    bg: "bg-green-50",
+    title: "Diagnóstico ejecutivo",
+    description: "Mapeamos procesos, datos y sistemas críticos para detectar cuellos de botella y cuantificar el impacto potencial.",
+    icon: <FaSearch className="w-8 h-8 text-indigo-700" />,
+    bg: "bg-indigo-50",
   },
   {
-    title: "Sincroniza datos",
-    description: "Integra cuadernos, sensores, estaciones meteo y compras para trazabilidad automática.",
-    icon: <FaSatelliteDish className="w-8 h-8 text-blue-700" />,
-    bg: "bg-blue-50",
+    title: "Roadmap priorizado",
+    description: "Construimos la hoja de ruta de automatización junto a tus equipos, definiendo quick wins, responsables y KPIs de negocio.",
+    icon: <FaProjectDiagram className="w-8 h-8 text-emerald-700" />,
+    bg: "bg-emerald-50",
   },
   {
-    title: "Activa inteligencia",
-    description: "La IA propone labores, genera reportes y comparte evidencias listas para auditorías.",
-    icon: <FaSeedling className="w-8 h-8 text-lime-600" />,
-    bg: "bg-lime-50",
+    title: "Activación y escalado",
+    description: "Lideramos la implantación de automatizaciones, medimos resultados y preparamos a tu equipo para operar en modo continuo.",
+    icon: <FaRocket className="w-8 h-8 text-orange-600" />,
+    bg: "bg-orange-50",
   },
 ];
 
 export default function HowItWorks() {
   return (
-    <section className="bg-[#faf9f6] py-24">
+    <section id="metodologia" className="bg-[#faf9f6] py-24">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
-          Cómo funciona
+          Cómo trabajamos contigo
         </h2>
         <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-          Digitaliza la operación agrícola paso a paso y mantén a tu equipo alineado desde un único panel.
+          Guiamos la transformación operativa de tu organización paso a paso, alineando dirección, equipos y tecnología hacia objetivos compartidos.
         </p>
 
         <div className="mt-20 relative">

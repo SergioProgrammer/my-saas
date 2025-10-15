@@ -1,11 +1,11 @@
-import { FaMapMarkedAlt, FaShieldAlt, FaRobot, FaUsersCog } from "react-icons/fa";
+import { FaProjectDiagram, FaShieldAlt, FaChartLine, FaUsersCog } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const benefits = [
-  { title: "Trazabilidad certificable", description: "Registra labores, fotos y sensores por lote para cumplir normativas como GlobalG.A.P.", icon: <FaMapMarkedAlt className="w-8 h-8 text-green-600" /> },
-  { title: "Cumplimiento sin papel", description: "Genera cuaderno digital, recetas y reportes sanitarios automáticamente.", icon: <FaShieldAlt className="w-8 h-8 text-emerald-600" /> },
-  { title: "IA para decisiones rápidas", description: "Recibe recomendaciones de riego, tratamientos y compras basadas en tus datos.", icon: <FaRobot className="w-8 h-8 text-blue-600" /> },
-  { title: "Equipo sincronizado", description: "Distribuye tareas a cuadrillas, asesores y proveedores desde un panel compartido.", icon: <FaUsersCog className="w-8 h-8 text-lime-600" /> },
+  { title: "Visión integral de procesos", description: "Obtén un mapa vivo de tus operaciones y los indicadores clave que necesitan priorización.", icon: <FaProjectDiagram className="w-8 h-8 text-indigo-600" /> },
+  { title: "Riesgos controlados", description: "Diseñamos automatizaciones con controles y cumplimiento embebido para evitar cuellos de botella y reprocesos.", icon: <FaShieldAlt className="w-8 h-8 text-emerald-600" /> },
+  { title: "Impacto financiero medible", description: "Construimos casos de negocio con ahorros, ingresos y productividad cuantificables desde el día uno.", icon: <FaChartLine className="w-8 h-8 text-blue-600" /> },
+  { title: "Equipos alineados", description: "Activamos gobernanza y rituales de seguimiento para que negocio, TI y operaciones avancen al mismo ritmo.", icon: <FaUsersCog className="w-8 h-8 text-orange-500" /> },
 ];
 
 export default function Benefits() {
@@ -16,10 +16,10 @@ export default function Benefits() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900">
-          Beneficios para tu campo
+          Beneficios para tu organización
         </h2>
         <p className="mt-4 text-base sm:text-lg text-gray-700/80 max-w-2xl mx-auto">
-          Todo lo que necesitas para operar con trazabilidad agrícola, cumplimiento normativo y colaboración en tiempo real.
+          Diseñamos programas de consultoría y automatización que combinan estrategia, datos y cambio cultural para acelerar tus resultados.
         </p>
       </div>
 

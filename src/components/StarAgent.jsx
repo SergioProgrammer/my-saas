@@ -5,63 +5,63 @@ import { MessageSquare, Mic, Database, Languages, WifiOff, Sparkles } from 'luci
 
 const scenarios = [
   {
-    id: 'greenhouse',
-    badge: 'Audio • Español',
-    title: 'Turno en invernadero 2',
+    id: 'onboarding',
+    badge: 'Voz • Español',
+    title: 'Seguimiento de onboarding de clientes',
     description:
-      'El encargado envía un audio corto por WhatsApp y el agente IA crea los partes de trabajo y registro horario automáticamente.',
+      'El equipo de operaciones deja notas de voz rápidas y el agente sincroniza CRM, tareas internas y métricas de avance automáticamente.',
     timeline: [
       {
         from: 'crew',
-        text: 'Entrando en invernadero 2 a las 8 de la mañana. Abrimos ventilación y reviso riego por goteo.',
+        text: 'Cliente Solvia: documentación validada, falta firma del contrato marco. Avisad a legal para revisión final.',
       },
       {
         from: 'agent',
-        text: 'Registro creado: inicio de turno en Invernadero 2 a las 08:00, tarea “Revisión riego”. Se asigna alerta de seguimiento a las 09:00.',
+        text: 'CRM actualizado a fase “Firma pendiente”. Notificación enviada a legal y recordatorio programado para mañana a las 09:00.',
       },
       {
         from: 'crew',
-        text: 'A las 9:05: cargadas dos cajas de naranjas para enviar a almacén.',
+        text: 'Contrato firmado. Activar accesos al portal y kickoff con customer success.',
       },
       {
         from: 'agent',
-        text: 'Inventario actualizado con 2 cajas de naranjas en tránsito hacia almacén central. Etiquetas QR listas.',
+        text: 'Provisionamiento iniciado. Ticket en ServiceNow para TI y reunión de kickoff agendada con customer success. KPI de onboarding actualizado.',
       },
     ],
     outcomes: [
-      'Actualiza la base de horarios y tareas con datos geolocalizados.',
-      'Crea recordatorios automáticos para verificar riego y ventilación.',
-      'Prepara documentos de trazabilidad sin intervención manual.',
+      'Sincroniza CRM, ticketing y reporting sin intervención manual.',
+      'Genera tareas y follow-ups basados en la voz del equipo.',
+      'Actualiza KPIs de onboarding en tiempo real para dirección.',
     ],
   },
   {
-    id: 'logistics',
-    badge: 'Audio • Português + modo offline',
-    title: 'Carga para Mercasur',
+    id: 'incidencias',
+    badge: 'Chat • Inglés + Portugués',
+    title: 'Gestión de incidencias en operaciones distribuidas',
     description:
-      'Un operario dicta el avance logístico en portugués mientras el camión está sin cobertura. La IA sincroniza cuando vuelve la señal.',
+      'Supervisores reportan incidencias desde planta en distintos idiomas y el agente coordina escalamientos y documentación de SLA.',
     timeline: [
       {
         from: 'crew',
-        text: 'Armazen, caminhão 7 carregado com 7 caixas de melancias para Mercasur. Sem rede, envio quando voltar.',
+        text: 'Site Lisboa: linha 4 parada, sensor de temperatura disparado. Necessitamos suporte de manutenção.',
       },
       {
         from: 'agent',
-        text: 'Nota guardada offline. Se agenda sincronização automática e controlo de temperatura do lote.',
+        text: 'Incidencia registrada en Jira. SLA crítico activado y alerta enviada al equipo de mantenimiento.',
       },
       {
         from: 'crew',
-        text: 'Conexión voltou. Confirmar despacho.',
+        text: 'Maintenance on it. Please notify customer support about potential shipment delay.',
       },
       {
         from: 'agent',
-        text: 'Despacho confirmado: 7 caixas de melancias em Caminhão 7 → Mercasur. Aviso enviado ao ERP y al responsable comercial.',
+        text: 'Actualización enviada a customer support y forecasting ajustado en el panel de operaciones. Reporte de SLA guardado.',
       },
     ],
     outcomes: [
-      'Reconoce voz en múltiples idiomas y acentos sin configuración extra.',
-      'Encola registros cuando no hay cobertura y sincroniza al recuperar señal.',
-      'Notifica a logística y ventas con la evidencia adjunta del audio.',
+      'Traduce y unifica comunicaciones multilingües.',
+      'Genera documentación de SLA y seguimiento automático.',
+      'Escala a las áreas correctas con contexto completo.',
     ],
   },
 ]
@@ -69,23 +69,23 @@ const scenarios = [
 const features = [
   {
     icon: <Mic className="h-5 w-5 text-emerald-600" />,
-    title: 'Audio o texto',
-    description: 'Transcribe, entiende y estructura instrucciones recibidas por WhatsApp, Telegram o llamada.'
+    title: 'Audio, texto y formularios',
+    description: 'Transcribe, entiende y estructura instrucciones capturadas desde WhatsApp, Teams o llamadas internas.'
   },
   {
     icon: <Languages className="h-5 w-5 text-blue-600" />,
     title: 'Multilingüe real',
-    description: 'Detecta idioma automáticamente y genera registros normalizados para el panel.'
+    description: 'Detecta idioma automáticamente y genera registros normalizados para CRM, ERP y sistemas de soporte.'
   },
   {
     icon: <WifiOff className="h-5 w-5 text-amber-600" />,
-    title: 'Sin cobertura',
-    description: 'Trabaja offline y sincroniza con inventario, horarios o cuaderno cuando vuelve la señal.'
+    title: 'Operativa 24/7',
+    description: 'Funciona offline y sincroniza en cuanto hay conexión, manteniendo la continuidad operativa.'
   },
   {
     icon: <Database className="h-5 w-5 text-purple-600" />,
     title: 'Integrado',
-    description: 'Graba los datos directamente en trazabilidad, inventario y plan de campañas sin copiar y pegar.'
+    description: 'Orquesta flujos entre tus automatizaciones, bases de datos y dashboards sin trabajo manual.'
   },
 ]
 
@@ -95,13 +95,13 @@ export default function StarAgent() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="max-w-3xl">
           <span className="inline-flex items-center gap-2 rounded-full bg-lime-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-lime-700">
-            <Sparkles className="h-3.5 w-3.5" /> Producto estrella
+            <Sparkles className="h-3.5 w-3.5" /> Oferta estrella
           </span>
           <h2 className="mt-6 text-4xl sm:text-5xl font-bold leading-tight text-gray-900">
-            Agente de WhatsApp que entiende tu campo
+            Agente estratégico para orquestar tus automatizaciones
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            Envía un audio desde el invernadero, desde el camión o desde la oficina. El agente IA interpreta la orden, la registra en la base adecuada y activa los flujos siguientes en segundos.
+            Convierte notas de voz, mensajes y formularios en instrucciones estructuradas. El agente IA conecta tus automatizaciones, actualiza sistemas y avisa a los equipos correctos en cuestión de segundos.
           </p>
         </div>
 
@@ -173,20 +173,20 @@ export default function StarAgent() {
 
         <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h3 className="text-xl font-semibold text-gray-900">Listo para tu finca en menos de una semana</h3>
+            <h3 className="text-xl font-semibold text-gray-900">Listo para tus operaciones en menos de una semana</h3>
             <p className="text-sm text-gray-600">
-              Nuestros agrónomos te ayudan a configurar palabras clave, rutas de sincronización y destinos de datos.
+              Nuestro equipo configura vocabularios, rutas de sincronización y buenas prácticas para que el agente trabaje alineado con tus procesos.
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
             <a
-              href="https://app-procesia.vercel.app/registro"
+              href="https://wa.me/34655689827"
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-gray-900 px-5 py-3 text-sm font-medium text-white shadow hover:bg-gray-800 transition"
             >
-              <Mic className="h-4 w-4" /> Probar agente IA
+              <Mic className="h-4 w-4" /> Agendar prueba guiada
             </a>
             <a
-              href="https://cal.com/procesia/agro"
+              href="https://wa.me/34655689827"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-gray-300 px-5 py-3 text-sm font-medium text-gray-800 hover:bg-gray-100 transition"
             >
               <Sparkles className="h-4 w-4" /> Diseñar mi escenario

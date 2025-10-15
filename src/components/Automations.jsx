@@ -1,42 +1,42 @@
-import { GiFarmTractor, GiPlantRoots, GiWaterDrop, GiGrain, GiWindmill, GiPlantWatering } from "react-icons/gi";
+import { FiGitMerge, FiTrendingUp, FiUsers, FiLayers, FiCheckCircle, FiServer } from "react-icons/fi";
 import { motion } from "framer-motion";
 
 const automations = [
   {
-    title: "Cuaderno digital SIEX",
-    description: "Captura labores, insumos y evidencias por parcela con reportes listos para auditoría.",
-    icon: <GiPlantRoots className="w-8 h-8 text-emerald-600" />,
-    color: "bg-emerald-50"
-  },
-  {
-    title: "Alertas de riego",
-    description: "Combina sondas de humedad y clima para ajustar turnos y prevenir estrés hídrico.",
-    icon: <GiWaterDrop className="w-8 h-8 text-blue-500" />,
-    color: "bg-sky-50"
-  },
-  {
-    title: "Planificación de maquinaria",
-    description: "Asigna labores a tractores y equipos con partes automáticos y seguimiento GPS.",
-    icon: <GiFarmTractor className="w-8 h-8 text-lime-600" />,
-    color: "bg-lime-50"
-  },
-  {
-    title: "Monitoreo satelital",
-    description: "Genera alertas de vigor, heladas y plagas desde imágenes NDVI y pronósticos.",
-    icon: <GiWindmill className="w-8 h-8 text-indigo-500" />,
+    title: "Orquestación de procesos",
+    description: "Modelamos journeys end-to-end y conectamos sistemas para reducir tiempos de ciclo críticos.",
+    icon: <FiGitMerge className="w-8 h-8 text-indigo-600" />,
     color: "bg-indigo-50"
   },
   {
-    title: "Control de cosecha",
-    description: "Registra cargas, calibres y lotes para vincularlos con almacenes y ventas.",
-    icon: <GiGrain className="w-8 h-8 text-amber-600" />,
+    title: "Procure-to-pay inteligente",
+    description: "Automatizamos requisición, aprobación y conciliación con reglas dinámicas y KPIs financieros.",
+    icon: <FiTrendingUp className="w-8 h-8 text-emerald-600" />,
+    color: "bg-emerald-50"
+  },
+  {
+    title: "Customer onboarding",
+    description: "Sincronizamos equipos comerciales, operaciones y soporte con automatizaciones omnicanal.",
+    icon: <FiUsers className="w-8 h-8 text-blue-500" />,
+    color: "bg-blue-50"
+  },
+  {
+    title: "Data governance operativo",
+    description: "Definimos modelos de datos, controles de calidad y tableros para tomar decisiones confiables.",
+    icon: <FiLayers className="w-8 h-8 text-purple-500" />,
+    color: "bg-purple-50"
+  },
+  {
+    title: "Compliance automatizado",
+    description: "Integración de controles, evidencias y reporting continuo para auditar cada proceso.",
+    icon: <FiCheckCircle className="w-8 h-8 text-amber-600" />,
     color: "bg-amber-50"
   },
   {
-    title: "Aplicaciones fitosanitarias",
-    description: "Verifica carencias, stock y condiciones climáticas antes de cada tratamiento.",
-    icon: <GiPlantWatering className="w-8 h-8 text-rose-500" />,
-    color: "bg-rose-50"
+    title: "Integración de plataformas",
+    description: "Conectamos ERP, CRM, low-code y RPA para mantener datos coherentes y procesos sostenibles.",
+    icon: <FiServer className="w-8 h-8 text-slate-600" />,
+    color: "bg-slate-100"
   },
 ];
 
@@ -45,10 +45,10 @@ export default function Automations() {
     <section className="bg-white py-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-tight">
-          Automatizaciones para agricultura
+          Capacidades listas para automatizar tus procesos
         </h2>
         <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-          Conecta sensores, maquinaria y equipos humanos para ejecutar campañas agrícolas con trazabilidad total.
+          Selecciona bloques de consultoría y automatización que aceleran la transformación de tus operaciones sin improvisaciones.
         </p>
 
         <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">

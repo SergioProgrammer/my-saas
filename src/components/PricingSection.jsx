@@ -2,51 +2,52 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { FaSeedling, FaTractor, FaWarehouse } from "react-icons/fa";
+import { FaCompass, FaProjectDiagram, FaBuilding } from "react-icons/fa";
 
 const plans = [
   {
-    title: "Piloto de trazabilidad",
-    price: "7 días sin coste",
+    title: "Diagnóstico estratégico",
+    price: "Sprint de 2 semanas",
     description:
-      "Digitaliza una explotación completa, importa tu cuaderno y valida la automatización con nuestro equipo agrónomo.",
+      "Evaluamos procesos, sistemas y datos críticos para priorizar automatizaciones con impacto tangible.",
     features: [
-      "✨ Cuaderno digital guiado",
-      "✔ Conexión a sensores y clima",
-      "✔ Soporte agronómico incluido",
+      "✨ Assessment de madurez y blueprint de procesos",
+      "✔ Caso de negocio con KPIs y quick wins",
+      "✔ Taller ejecutivo de alineamiento",
     ],
-    icon: <FaSeedling className="w-8 h-8 text-emerald-600" />,
-    cta: "Solicitar piloto",
+    icon: <FaCompass className="w-8 h-8 text-indigo-600" />,
+    cta: "Reservar diagnóstico",
+    highlight: false,
+    ctaHref: "https://wa.me/34655689827",
+  },
+  {
+    title: "Programa de transformación end-to-end",
+    price: "Ciclos trimestrales",
+    description:
+      "Co-diseñamos, activamos y medimos automatizaciones priorizadas junto a tus equipos de negocio, TI y datos.",
+    features: [
+      "✔ Roadmap trimestral con portfolio priorizado",
+      "✔ Implementación híbrida (low-code, RPA, integración)",
+      "✔ Governance, métricas y gestión del cambio",
+    ],
+    icon: <FaProjectDiagram className="w-8 h-8 text-emerald-600" />,
+    cta: "Diseñar programa",
     highlight: true,
-    ctaHref: "https://cal.com/procesia/agro",
+    ctaHref: "https://wa.me/34655689827",
   },
   {
-    title: "Operación multicuartel",
-    price: "",
-    description:
-      "Activa automatizaciones de trazabilidad, riego y stock para varias parcelas con reporte semanal.",
-    features: [
-      "✔ Automatizaciones ilimitadas",
-      "✔ Roles para cuadrillas y asesores",
-      "✔ Reporting agronómico avanzado",
-    ],
-    icon: <FaTractor className="w-8 h-8 text-lime-600" />,
-    cta: "Hablar con ventas",
-    ctaHref: "https://cal.com/procesia/operaciones",
-  },
-  {
-    title: "Cooperativas y grupos",
+    title: "Oficina de automatización (PMO)",
     price: "Plan a medida",
     description:
-      "Centraliza varias explotaciones, integra ERPs y comparte trazabilidad con certificadoras y clientes.",
+      "Extendemos tus capacidades internas con gobierno, formación y soporte continuo para escalar automatizaciones.",
     features: [
-      "✔ Multi-explotación y multimoneda",
-      "✔ Dashboards personalizados",
-      "✔ Integración a medida",
+      "✔ Oficina de automatización dedicada",
+      "✔ Framework de priorización y OKRs operativos",
+      "✔ Capacitación y acompañamiento continuo",
     ],
-    icon: <FaWarehouse className="w-8 h-8 text-indigo-600" />,
-    cta: "Agendar asesoría",
-    ctaHref: "https://cal.com/procesia/cooperativas",
+    icon: <FaBuilding className="w-8 h-8 text-blue-600" />,
+    cta: "Hablar con dirección",
+    ctaHref: "https://wa.me/34655689827",
   },
 ];
 
@@ -204,10 +205,10 @@ export default function Pricing() {
       <section className="bg-gradient-to-b from-gray-50 to-white py-24 relative">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900">
-            Planes para el campo
+            Planes de consultoría estratégica
           </h2>
           <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-            Escala tu trazabilidad agrícola con acompañamiento experto. Ajustamos la plataforma a cada explotación y cooperativa.
+            Activa un programa de automatización respaldado por negocio, datos y tecnología. Ajustamos cada plan a la realidad y ritmo de tu organización.
           </p>
 
           {/* Grid Desktop */}

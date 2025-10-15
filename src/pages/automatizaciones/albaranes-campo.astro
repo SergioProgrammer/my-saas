@@ -6,137 +6,138 @@ import AutomationDetailLayout from "../../components/AutomationDetailLayout.astr
 
 const detail = {
   hero: {
-    badge: "Agronegocios",
-    title: "Albaranes digitales de campo",
+    badge: "Operaciones",
+    title: "Captura inteligente de documentación",
     description:
-      "Digitaliza la entrada y salida de producto en campo con OCR especializado y sincronización instantánea.",
+      "Automatizamos la ingesta, validación y distribución de contratos, albaranes y formularios críticos sin procesos manuales.",
     highlights: [
-      "Captura desde móvil u hoja de ruta",
-      "Reconocimiento OCR entrenado para formatos agrarios",
-      "Asignación automática a cooperativa o cliente",
-      "Firma digital para transportistas",
+      "Captura omnicanal (email, apps, escáner, RPA)",
+      "Validación automática con reglas de negocio",
+      "Enriquecimiento con datos maestros y workflows",
+      "Distribución instantánea a ERP, CRM o DMS",
     ],
     panelCopy:
-      "Sube albaranes desde la app, valida datos y consulta estados desde el dashboard con filtros avanzados.",
+      "Controla SLA, estados y excepciones desde un panel que centraliza documentos, aprobaciones y trazabilidad.",
     metrics: [
-      { label: "Procesos sin papel", value: "92%", caption: "Documentos digitalizados" },
-      { label: "Tiempo de registro", value: "-70%", caption: "Frente al proceso manual" },
+      { label: "Documentos procesados", value: "120k/año", caption: "Promedio gestionado por equipo consultivo" },
+      { label: "Incidencias reducidas", value: "-65%", caption: "Errores manuales eliminados" },
     ],
   },
   sections: [
     {
-      title: "Qué automatiza",
-      subtitle: "Centraliza la documentación logística de campo en cuestión de minutos.",
+      title: "Qué resuelve",
+      subtitle: "Control total del ciclo documental desde la recepción hasta el archivo final.",
       items: [
         {
-          title: "Captura en origen",
+          title: "Ingesta omnicanal",
           description:
-            "Los transportistas o encargados fotografían el albarán y el OCR extrae datos clave automáticamente.",
-          tags: ["OCR especializado", "App móvil"],
+            "Recolectamos documentos desde correo, portales, apps móviles o escáneres industriales y los unificamos en un único flujo.",
+          tags: ["Email to flow", "APIs"],
         },
         {
           title: "Validación inteligente",
           description:
-            "Detecta discrepancias de kilos, variedades o matrículas y avisa para su corrección inmediata.",
-          tags: ["Validación automática", "Alertas"],
+            "Aplicamos reglas de negocio, detección de anomalías y comparativas con datos maestros antes de liberar cada documento.",
+          tags: ["Match automático", "Alertas"],
         },
         {
-          title: "Integración contable",
+          title: "Distribución y archivo",
           description:
-            "Envía datos al ERP, genera pre-facturas y asocia el albarán al tratamiento o pedido correspondiente.",
-          tags: ["ERP", "Facturación"],
+            "Enrutamos el documento aprobado a ERP, CRM o gestor documental, conservando trazabilidad y versionado.",
+          tags: ["ERP", "DMS"],
         },
       ],
     },
     {
       title: "Flujo digital",
-      subtitle: "Del escaneo a la aprobación en cuatro pasos.",
+      subtitle: "Del documento entrante a su distribución sin fricciones.",
       layout: "timeline",
       items: [
-        { step: "01", title: "Escanea", description: "Captura el albarán desde móvil o tablet." },
-        { step: "02", title: "Reconoce", description: "El OCR detecta productor, kilos, matrículas y destino." },
-        { step: "03", title: "Valida", description: "Revisa incidencias y aprueba desde el dashboard." },
-        { step: "04", title: "Comparte", description: "Envía al ERP o comparte con cliente/cooperativa automáticamente." },
+        { step: "01", title: "Capturar", description: "El documento entra por email, API, app móvil o RPA." },
+        { step: "02", title: "Reconocer", description: "Extraemos datos con OCR avanzado y enriquecemos con catálogos maestros." },
+        { step: "03", title: "Validar", description: "Aplicamos reglas de negocio, gestionamos excepciones y recogemos aprobaciones." },
+        { step: "04", title: "Distribuir", description: "Publicamos el documento y sus datos en tus sistemas y archivamos la evidencia." },
       ],
     },
     {
-      title: "Documentación disponible",
-      subtitle: "Cumple con las exigencias de trazabilidad y auditoría.",
+      title: "Capacidades clave",
+      subtitle: "Automatización documental diseñada para operaciones complejas.",
       items: [
         {
           title: "Histórico navegable",
           description:
-            "Consulta albaranes por parcela, conductor o ruta. Exporta lotes completos para auditoría.",
+            "Consulta documentos por cliente, proveedor, campaña o estado con filtros avanzados y auditoría completa.",
           tags: ["Filtros avanzados"],
         },
         {
-          title: "Firmas digitales",
+          title: "Firmas y evidencias",
           description:
-            "Recoge firma en pantalla o añade sello digital en segundos, con registro de hora y coordenadas.",
-          tags: ["Firma biométrica"],
+            "Recogemos firmas electrónicas o biométricas, sellos temporales y adjuntos para respaldar auditorías.",
+          tags: ["Firma digital", "Evidencias"],
         },
         {
           title: "Soporte multi-formato",
           description:
-            "Acepta fotos, PDFs o documentos escaneados. El sistema mejora la calidad automáticamente.",
+            "Trabajamos con PDF, imagen, EDI o datos estructurados, mejorando la calidad con IA cuando es necesario.",
           tags: ["PDF", "Imagen"],
         },
       ],
-      callout: "Incluye configuración de plantillas para tus albaranes habituales y entrenamiento adicional del OCR si lo necesitas.",
+      callout: "Incluye librería de validaciones, plantillas configurables y entrenamiento OCR específico cuando lo requieras.",
     },
   ],
   pricing: {
     tiers: [
       {
-        name: "Finca con ventas directas",
-        description: "Ideal para producciones pequeñas con hasta 150 albaranes al mes.",
-        price: "54,99 €",
-        users: "5 usuarios",
+        name: "Operación central",
+        description: "Para equipos que gestionan hasta 15.000 documentos anuales con varios orígenes.",
+        price: "Desde 3.900 €",
+        users: "Equipo núcleo",
         includes: [
-          "OCR estándar",
-          "Archivo digital por lote",
-          "Exportación PDF",
+          "Flujo de captura omnicanal",
+          "Validación estándar",
+          "Dashboards operativos",
         ],
       },
       {
-        name: "Cooperativa regional",
-        description: "Gestiona múltiples rutas y transportistas con control centralizado.",
-        price: "84,99 €",
-        users: "15 usuarios",
+        name: "Multi-sede",
+        description: "Organizaciones con varias sedes, idiomas y workflows diferenciados.",
+        price: "Desde 6.400 €",
+        users: "Equipos extendidos",
         includes: [
-          "Validación automática",
-          "Firma digital",
-          "Integración ERP",
+          "Reglas flexibles por segmento",
+          "Integración con ERP / CRM",
+          "Gestión de excepciones avanzada",
         ],
         highlight: true,
       },
       {
-        name: "Grupo agroindustrial",
-        description: "Escalabilidad para miles de documentos al mes y automatización avanzada.",
-        price: "149,99 €",
+        name: "Corporativo",
+        description: "Programas con alto volumen, cumplimiento regulatorio y múltiples sistemas core.",
+        price: "Plan a medida",
         users: "Usuarios ilimitados",
         includes: [
           "OCR entrenado a medida",
-          "API de importación masiva",
-          "Soporte 24/7",
+          "Automatizaciones RPA / API",
+          "Soporte 24/7 y runbook",
         ],
       },
     ],
     offline: {
       description:
-        "Captura documentos incluso sin cobertura. El reconocimiento se ejecuta automáticamente al reconectar.",
-      extraLabel: "OCR offline con cola",
-      price: "+12,99 € / mes",
+        "Disponemos de captura offline y sincronización diferida para operaciones en planta o hubs logísticos.",
+      extraLabel: "Captura offline",
+      price: "Sin coste adicional",
     },
-    customCopy: "¿Necesitas integrarte con transportistas externos o sello electrónico homologado? Lo configuramos contigo.",
+    customCopy: "¿Necesitas sello electrónico homologado o conciliación con proveedores externos? Lo diseñamos contigo.",
   },
   cta: {
-    primaryLabel: "Digitalizar albaranes",
-    secondaryLabel: "Reservar consultoría",
-    secondaryHref: "https://cal.com/procesia/agro",
-    finalTitle: "Despídete del papel en tus rutas",
+    primaryLabel: "Explorar caso de uso",
+    primaryHref: "https://wa.me/34655689827",
+    secondaryLabel: "Solicitar workshop",
+    secondaryHref: "https://wa.me/34655689827",
+    finalTitle: "Documentos validados y disponibles en minutos",
     finalSubtitle:
-      "Digitaliza cada entrada o salida desde el campo y gana trazabilidad inmediata en tu dashboard.",
+      "Elimina tareas manuales, reduce errores y libera a tu equipo para actividades de mayor valor.",
   },
 };
 ---

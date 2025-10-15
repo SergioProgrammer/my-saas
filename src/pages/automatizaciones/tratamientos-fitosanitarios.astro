@@ -6,138 +6,139 @@ import AutomationDetailLayout from "../../components/AutomationDetailLayout.astr
 
 const detail = {
   hero: {
-    badge: "Agronegocios",
-    title: "Tratamientos fitosanitarios asistidos",
+    badge: "Compliance",
+    title: "Compliance automatizado y auditoría continua",
     description:
-      "Programa, ejecuta y documenta tratamientos por parcela con alertas de seguridad y trazabilidad integral.",
+      "Diseñamos controles, evidencias y reporting verificados para cumplir normativa y mitigar riesgos operativos en tiempo real.",
     highlights: [
-      "Calendario inteligente por cultivo",
-      "Alertas meteorológicas y periocidad",
-      "Registro oficial en un clic",
-      "Integrado con stock y pedidos",
+      "Matriz de riesgos y controles automatizados",
+      "Alertas regulatorias y revisión constante",
+      "Evidencias y trazabilidad en segundos",
+      "Dashboards para comité de compliance",
     ],
     panelCopy:
-      "Desde el dashboard planificas tratamientos, controlas stock asociado y sigues la ejecución en tiempo real.",
+      "Gestiona cumplimiento y auditoría desde un panel que centraliza políticas, controles y evidencia actualizada.",
     metrics: [
-      { label: "Cumplimiento normativo", value: "100%", caption: "Documentación homologada" },
-      { label: "Tiempo de preparación", value: "-40%", caption: "Menos tiempo generando partes" },
+      { label: "Controles automatizados", value: "+75%", caption: "Respecto a la línea base manual" },
+      { label: "Incidentes críticos", value: "-60%", caption: "Reducción media tras implantar" },
     ],
   },
   sections: [
     {
-      title: "Qué automatiza",
-      subtitle: "Controla cada tratamiento de forma segura y alineada con normativa.",
+      title: "Qué automatizamos",
+      subtitle: "Compliance operativo conectado a tus sistemas y equipos.",
       items: [
         {
-          title: "Planificación por cultivo",
+          title: "Matriz de riesgos",
           description:
-            "El sistema sugiere tratamientos según plagas registradas, ventanas de seguridad y recomendaciones técnicas.",
-          tags: ["IA recomendadora", "Calendario"],
+            "Mapeamos procesos, riesgos y controles para priorizar automatizaciones con mayor impacto regulatorio.",
+          tags: ["Risk mapping", "Controles"],
         },
         {
-          title: "Check-list de seguridad",
+          title: "Protocolos y checklists",
           description:
-            "Genera protocolo de seguridad para aplicadores, con EPIs requeridos y tiempos de reentrada.",
-          tags: ["Seguridad", "EPIs"],
+            "Generamos checklists automáticos, aprobaciones y protocolos según normativas internas y externas.",
+          tags: ["Procedimientos", "Aprobaciones"],
         },
         {
-          title: "Registro oficial",
+          title: "Evidencias y reporting",
           description:
-            "Emite el cuaderno de campo y el registro fitosanitario actualizado para inspección.",
-          tags: ["Cuaderno digital", "RGSEAA"],
+            "Capturamos evidencias, firmas y logs para alimentar informes regulatorios y auditorías.",
+          tags: ["Auditoría", "Reporting"],
         },
       ],
     },
     {
       title: "Flujo recomendado",
-      subtitle: "Del aviso de plaga a la verificación de resultados.",
+      subtitle: "Del riesgo detectado al informe aprobado sin hojas de cálculo.",
       layout: "timeline",
       items: [
-        { step: "01", title: "Diagnóstico", description: "Detecta incidencia o recibe recomendación automática." },
-        { step: "02", title: "Planifica", description: "Selecciona producto, dosis y ventana de aplicación sugerida." },
-        { step: "03", title: "Ejecuta", description: "Los aplicadores reciben instrucciones y registran la aplicación, incluso offline." },
-        { step: "04", title: "Reporta", description: "Se genera informe con lotes utilizados, operarios y tiempos de carencia." },
+        { step: "01", title: "Identificar", description: "Recogemos riesgos o incidencias de los sistemas y equipos implicados." },
+        { step: "02", title: "Activar control", description: "Lanzamos el protocolo correcto, tareas y evidencias necesarias." },
+        { step: "03", title: "Verificar", description: "Validamos cumplimiento, recogemos firmas y sellos temporales." },
+        { step: "04", title: "Reportar", description: "Generamos informes para auditoría, clientes o reguladores automáticamente." },
       ],
     },
     {
       title: "Integraciones técnicas",
-      subtitle: "Conecta el módulo con sensores, estaciones y laboratorios.",
+      subtitle: "Conectamos compliance con tus datos y herramientas clave.",
       items: [
         {
-          title: "Estaciones meteorológicas",
+          title: "Sistemas core",
           description:
-            "Sincroniza pronósticos para ajustar ventanas de seguridad y prohibir aplicaciones en condiciones no aptas.",
-          tags: ["Davis", "Meteo"],
+            "Integramos ERP, CRM, HRIS o MES para obtener datos maestros y registrar cumplimiento.",
+          tags: ["ERP", "CRM"],
         },
         {
-          title: "Laboratorios",
+          title: "Herramientas legales",
           description:
-            "Recibe análisis de residuos y enlaza resultados con cada tratamiento aplicado.",
-          tags: ["Residuo cero"],
+            "Sincronizamos bases regulatorias y actualizaciones legales para mantener controles vigentes.",
+          tags: ["Legaltech", "Alertas"],
         },
         {
-          title: "Sensores de campo",
+          title: "Data & analytics",
           description:
-            "Activa alertas por humedad o presencia de plagas para disparar nuevas recomendaciones.",
-          tags: ["IoT", "Sensórica"],
+            "Conectamos data warehouse, BI o GRC para alimentar dashboards y evidencias.",
+          tags: ["BI", "GRC"],
         },
       ],
       callout:
-        "Incluimos plantillas certificadas y soporte en auditorías de Producción Integrada o GlobalG.A.P.",
+        "Incluye plantillas certificadas, runbooks de crisis y soporte durante auditorías internas o externas.",
     },
   ],
   pricing: {
     tiers: [
       {
-        name: "Explotación especializada",
-        description: "Para fincas con hasta 200 hectáreas y equipo reducido.",
-        price: "64,99 €",
-        users: "5 aplicadores / 2 técnicos",
+        name: "Programa esencial",
+        description: "Cumplimiento operativo en áreas con normativas sectoriales específicas.",
+        price: "Desde 5.200 €",
+        users: "Equipo compliance",
         includes: [
-          "Planificador por cultivo",
-          "Checklist de seguridad",
-          "Registro digital básico",
+          "Matriz de riesgos",
+          "Protocolos automatizados",
+          "Informes estándar",
         ],
       },
       {
-        name: "Producción integrada",
-        description: "Gestiona múltiples cultivos y turnos con normativa exigente.",
-        price: "194,99 €",
-        users: "15 usuarios",
+        name: "Gobierno integral",
+        description: "Integración con sistemas core y reporting diferenciado por área o región.",
+        price: "Desde 8.900 €",
+        users: "Multi-equipo",
         includes: [
-          "Alertas meteorológicas",
-          "Integración con stock",
-          "Cuaderno digital avanzado",
+          "Alertas regulatorias",
+          "Integraciones live",
+          "Dashboard ejecutivo",
         ],
         highlight: true,
       },
       {
-        name: "Cooperativa + Laboratorio",
-        description: "Coordina técnicos, aplicadores y laboratorio con reporting consolidado.",
-        price: "269,99 €",
+        name: "Enterprise",
+        description: "Programas corporativos con múltiples regulaciones, regiones y foros de auditoría.",
+        price: "Plan a medida",
         users: "Usuarios ilimitados",
         includes: [
-          "Integraciones IoT",
-          "Automatización de residuo",
-          "Soporte auditoría",
+          "Integraciones GRC",
+          "Evidencias automatizadas",
+          "Soporte de auditoría 24/7",
         ],
       },
     ],
     offline: {
       description:
-        "Los aplicadores pueden seguir instrucciones y registrar aplicaciones sin cobertura; el sistema guarda evidencia con sello temporal al sincronizar.",
-      extraLabel: "Cuaderno offline",
-      price: "+20,99 € / mes por brigada",
+        "Soportamos captura de evidencia offline y sincronización diferida para ubicaciones con baja conectividad.",
+      extraLabel: "Modo offline",
+      price: "Incluido",
     },
-    customCopy: "¿Necesitas normativa específica (eco, biodinámico, exportación)? Configuramos las reglas para tu explotación.",
+    customCopy: "¿Necesitas normativa específica o integración con tu GRC actual? Configuramos reglas y conectores a medida.",
   },
   cta: {
-    primaryLabel: "Gestionar tratamientos",
-    secondaryLabel: "Hablar con un agrónomo",
-    secondaryHref: "https://cal.com/procesia/agro",
-    finalTitle: "Tu cuaderno fitosanitario siempre al día",
+    primaryLabel: "Agendar sesión de compliance",
+    primaryHref: "https://wa.me/34655689827",
+    secondaryLabel: "Solicitar demo de reporting",
+    secondaryHref: "https://wa.me/34655689827",
+    finalTitle: "Cumplimiento continuo con evidencias listas",
     finalSubtitle:
-      "Programa, ejecuta y certifica tratamientos sin salir del dashboard, unido al resto de automatizaciones agrónomas.",
+      "Reduce riesgos, anticipa auditorías y gana tranquilidad con controles automatizados y medibles.",
   },
 };
 ---
