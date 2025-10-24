@@ -68,24 +68,24 @@ const scenarios = [
 
 const features = [
   {
-    icon: <Mic className="h-5 w-5 text-emerald-600" />,
-    title: 'Audio, texto y formularios',
-    description: 'Transcribe, entiende y estructura instrucciones capturadas desde WhatsApp, Teams o llamadas internas.'
+    icon: <Database className="h-5 w-5 text-purple-600" />,
+    title: 'Control operativo unificado',
+    description: 'Conecta PLCs, SCADA, MES, ERP y automatizaciones RPA en una sola plataforma de decisión.',
   },
   {
     icon: <Languages className="h-5 w-5 text-blue-600" />,
     title: 'Multilingüe real',
-    description: 'Detecta idioma automáticamente y genera registros normalizados para CRM, ERP y sistemas de soporte.'
+    description: 'Detecta idioma automáticamente y genera registros normalizados para CRM, ERP y sistemas de soporte.',
+  },
+  {
+    icon: <Mic className="h-5 w-5 text-emerald-600" />,
+    title: 'Captura omnicanal',
+    description: 'Transcribe, entiende y estructura instrucciones provenientes de voz, WhatsApp, Teams o formularios técnicos.',
   },
   {
     icon: <WifiOff className="h-5 w-5 text-amber-600" />,
     title: 'Operativa 24/7',
-    description: 'Funciona offline y sincroniza en cuanto hay conexión, manteniendo la continuidad operativa.'
-  },
-  {
-    icon: <Database className="h-5 w-5 text-purple-600" />,
-    title: 'Integrado',
-    description: 'Orquesta flujos entre tus automatizaciones, bases de datos y dashboards sin trabajo manual.'
+    description: 'Funciona offline y sincroniza en cuanto hay conexión, manteniendo la continuidad operativa.',
   },
 ]
 
@@ -101,7 +101,7 @@ export default function StarAgent() {
             Agente estratégico para orquestar tus automatizaciones
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            Convierte notas de voz, mensajes y formularios en instrucciones estructuradas. El agente IA conecta tus automatizaciones, actualiza sistemas y avisa a los equipos correctos en cuestión de segundos.
+            Convierte notas de voz, mensajes y formularios en instrucciones estructuradas, se integra con tus sistemas industriales y activa workflows sobre PLCs, SCADA, MES, ERPs y herramientas comerciales sin intervención manual.
           </p>
         </div>
 
@@ -180,16 +180,16 @@ export default function StarAgent() {
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
             <a
-              href="https://wa.me/34655689827"
+              href="/tienda"
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-gray-900 px-5 py-3 text-sm font-medium text-white shadow hover:bg-gray-800 transition"
             >
-              <Mic className="h-4 w-4" /> Agendar prueba guiada
+              <Sparkles className="h-4 w-4" /> Explorar servicios
             </a>
             <a
               href="https://wa.me/34655689827"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-gray-300 px-5 py-3 text-sm font-medium text-gray-800 hover:bg-gray-100 transition"
             >
-              <Sparkles className="h-4 w-4" /> Diseñar mi escenario
+              <MessageSquare className="h-4 w-4" /> Hablar por WhatsApp
             </a>
           </div>
         </div>
